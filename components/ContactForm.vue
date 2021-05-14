@@ -11,7 +11,7 @@
     <div class="row mt-4">
       <div class="col">
         <div class="col p-3 rounded" style="background: var(--secondary)">
-          <input type="text" class="form-control form-control-lg" aria-label="Last name"  placeholder="Your Email" v-model="data.email">
+          <input type="email" class="form-control form-control-lg" aria-label="Last name"  placeholder="Your Email" v-model="data.email">
         </div>
         <div class="col mt-3">
           <button class="btn btn-success w-100 p-3 submit-button">{{state}}</button>
@@ -55,7 +55,7 @@
         try {
           const token = await this.$recaptcha.execute('sendMessage')
           console.log('ReCaptcha token:', token)
-          const response = await this.$http.$get('http://localhost:5000/itsmeromian/us-central1/sendMessage?' +
+          const response = await this.$http.$get('https://us-central1-itsmeromian.cloudfunctions.net/sendMessage?' +
             'firstName=' + this.data.firstName +
             '&email=' + this.data.email +
             '&message=' + this.data.message +
@@ -75,7 +75,7 @@
             }
           }
         } catch (error) {
-          this.state = "Sorry, ReCaptcha Fail..."
+          this.state = "Sorry, ReCaptcha thinks your a bot..."
           console.log('sendMessage error:', error)
         }
       }
@@ -97,12 +97,6 @@
     font-size: 2rem;
     font-family: Roboto,sans-serif;
     font-weight: 900;
-    color: var(--text)
-  }
-  .form-text {
-    font-family: Roboto,sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
     color: var(--text)
   }
 </style>
