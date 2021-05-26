@@ -1,14 +1,14 @@
 <template>
-  <div class="row text-start my-5">
-    <div class="col-md-6 col-12 p-3 mt-5 rounded" style="background: var(--secondary)">
+  <div class="row text-start my-5 project">
+    <div class="col-md-6 col-12 p-3 mt-5 rounded project-text" style="background: var(--secondary)">
       <h1 class="project-title text-left">{{data.name}}</h1>
       <p class="project-desc text-left">{{data.desc}}</p>
-      <span class="align-items-end" v-for="item in data.actions" :key="item.name">
-                <a class="btn btn-success" :href="item.link">{{item.name}}</a>
-                <span class="mx-1"/>
-            </span>
+      <span class="buttons">
+        <a class="btn btn-success mx-1" v-for="item in data.actions" :key="item.name" :href="item.link">{{item.name}}</a>
+<!--          <a class="btn btn-success" :href="data.readMore">Read More</a>-->
+      </span>
     </div>
-    <div class="col-md-6 col-12 p-3 mb-5 rounded" style="background: var(--trimary)">
+    <div class="col-md-6 col-12 p-3 mb-5 rounded project-image" style="background: var(--trimary)">
       <img :src="data.image" class="img-fluid" style="aspect-ratio: 1" alt="Project Image">
     </div>
   </div>
@@ -23,6 +23,28 @@
 </script>
 
 <style>
+    .buttons {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 1rem;
+    }
+    .buttons-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 1rem;
+    }
+    .project-text, .project-image {
+        transition: ease 300ms;
+    }
+    .project:hover > .project-text {
+        margin-top: 0!important;
+    }
+    .project:hover > .project-image {
+        margin-bottom: 0!important;
+    }
+
   @media (max-width: 768px) {
     .project-title {
       /*Alleen kleine schermen*/

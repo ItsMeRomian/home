@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+  background: #191919;
+  color: #F8F8F8;
+}
+:root {
+  --primary: #191919;
+  --secondary: #232323;
+  --trimary: #303030;
+  --text: #F8F8F8;
+  --egg: #F6F0DF;
+  --green: #049F76
+}
