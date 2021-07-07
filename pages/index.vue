@@ -11,9 +11,9 @@
                 STUDENT SOFTWARE DEVELOPER
               </p>
               <span style="font-size: 2rem;">
-                <i class="bi bi-github"></i>
-                <i class="bi bi-linkedin mx-4"></i>
-                <i class="bi bi-twitter"></i>
+                <i class="bi bi-github" @click="goTo('https://github.com/itsmeromian')"></i>
+                <i class="bi bi-linkedin mx-4" @click="goTo('https://www.linkedin.com/in/romiantairovski')"></i>
+                <i class="bi bi-twitter" @click="goTo('https://twitter.com/itsmeromian')"></i>
               </span>
             </div>
           </div>
@@ -28,10 +28,10 @@
         <project :data="this.projects['0']" />
         <project-flipped :data="this.projects['1']" />
         <project :data="this.projects['2']" />
-        <project-flipped :data="this.projects['3']" />
+        <project-flipped :data="this.projects['6']" />
         <project :data="this.projects['4']" />
         <project-flipped :data="this.projects['5']" />
-        <project :data="this.projects['6']" />
+        <project :data="this.projects['3']" />
       </div>
       <div class="contact text-center">
         <h2 class="contact-title">Send me a message</h2>
@@ -61,11 +61,19 @@ export default {
     return {
       projects: this.$store.state.projects.projects
     };
+  },
+  methods: {
+    goTo(location) {
+      window.location.href = location;
+    }
   }
 };
 </script>
 
 <style>
+.bi {
+  cursor: pointer;
+}
 hr {
   border-top: 1px solid var(--egg);
 }
