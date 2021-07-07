@@ -31,6 +31,7 @@
         <project-flipped :data="this.projects['3']" />
         <project :data="this.projects['4']" />
         <project-flipped :data="this.projects['5']" />
+        <project :data="this.projects['6']" />
       </div>
       <div class="contact text-center">
         <h2 class="contact-title">Send me a message</h2>

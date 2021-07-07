@@ -1,7 +1,8 @@
 export const state = () => ({
   projects: [
     {
-      name: "FreeFlexr",
+      name: "FreeFlexr 💪",
+      date: "September 2020",
       desc: "One Place to manage all your freeflexing jobs.",
       actions: {
         0: {
@@ -16,7 +17,8 @@ export const state = () => ({
       image: require("@/static/FreeFlexr.jpg")
     },
     {
-      name: "JumboRadio",
+      name: "JumboRadio 📻",
+      date: "May 2021",
       desc: "A frontend for the Jumbo Radio Stream.",
       actions: {
         0: {
@@ -31,7 +33,8 @@ export const state = () => ({
       image: require("@/static/JumboRadio.jpg")
     },
     {
-      name: "TipTopIbiza",
+      name: "TipTopIbiza 🏠",
+      date: "Januari 2020",
       desc: "Website of a Spanish property management company.",
       actions: {
         0: {
@@ -46,8 +49,9 @@ export const state = () => ({
       image: require("@/static/TipTopIbiza.jpg")
     },
     {
-      name: "DynaHotel",
-      desc: "a bootstrap theme for BrainCMS",
+      name: "DynaHotel 🏨",
+      date: "August 2019",
+      desc: "a bootstrap theme for BrainCMS.",
       actions: {
         0: {
           name: "Github",
@@ -61,7 +65,8 @@ export const state = () => ({
       image: require("@/static/DynaHotel.jpg")
     },
     {
-      name: "ModTools",
+      name: "ModTools 🛠️",
+      date: "August 2019",
       desc: "An allround admin environment for habbo retro's owners.",
       actions: {
         0: {
@@ -72,7 +77,8 @@ export const state = () => ({
       image: require("@/static/ModTools.jpg")
     },
     {
-      name: "FriendlyTapirs",
+      name: "FriendlyTapirs 💻",
+      date: "April 2019",
       desc: "A webdesign company ran with friends.",
       actions: {
         0: {
@@ -85,6 +91,22 @@ export const state = () => ({
         }
       },
       image: require("@/static/FriendlyTapirs.jpg")
+    },
+    {
+      name: "Pasta 🍝",
+      date: "July 2021",
+      desc: "A place to paste code snippets or text.",
+      actions: {
+        0: {
+          name: "Github",
+          link: "https://github.com/ItsMeRomian/Pasta"
+        },
+        1: {
+          name: "Website",
+          link: "https://pasta.dyna.host"
+        }
+      },
+      image: require("@/static/pasta.jpg")
     }
   ]
 });
