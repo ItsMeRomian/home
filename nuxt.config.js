@@ -7,7 +7,7 @@ export default {
       lang: "en"
     },
     meta: [{ charset: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, { hid: "description", name: "description", content: "Student Software Developer from the Netherlands." }],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logos/small.png" }]
   },
 
   css: ["~/assets/style.css"],

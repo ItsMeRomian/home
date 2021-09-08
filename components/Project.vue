@@ -10,7 +10,7 @@
       </span>
     </div>
     <div class="col-md-6 col-12 p-3 mb-5 rounded project-image" style="background: var(--trimary)">
-      <img :src="data.image" class="img-fluid" style="aspect-ratio: 1" alt="Project Image" />
+      <img :src="data.image" class="img-fluid" alt="Project Image" />
     </div>
   </div>
 </template>

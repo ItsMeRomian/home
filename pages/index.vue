@@ -18,7 +18,7 @@
             </div>
           </div>
         </div>
-        <div class="col"></div>
+        <div class="col d-flex align-items-center"></div>
       </div>
     </div>
     <div class="container mb-5">
