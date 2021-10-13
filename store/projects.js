@@ -17,9 +17,9 @@ export const state = () => ({
       image: require("@/static/FreeFlexr.jpg")
     },
     {
-      name: "JumboRadio 📻",
+      name: "SupermarketRadio 📻",
       date: "May 2021",
-      desc: "A frontend for the Jumbo Radio Stream.",
+      desc: "A frontend for a known Dutch Supermarket Radio Stream.",
       actions: {
         0: {
           name: "Github",
