@@ -3,7 +3,7 @@
     <div class="col-md-6 col-12 p-3 mt-5 rounded project-text" style="background: var(--secondary)">
       <h1 class="project-title text-left">{{ data.name }}</h1>
       <p class="text-left project-date">{{ data.date }}</p>
-      <p class="project-desc text-left">{{ data.desc }}</p>
+      <p class="project-desc text-left">{{ data.desc }}<br /><br /></p>
       <span class="buttons">
         <a class="btn btn-success mx-1" v-for="item in data.actions" :key="item.name" :href="item.link">{{ item.name }}</a>
         <!--          <a class="btn btn-success" :href="data.readMore">Read More</a>-->
