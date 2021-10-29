@@ -7,12 +7,12 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const discordKey = functions.config().discord.token;
 
-exports.sendMessage = functions.https.onRequest((req, res) => {
+exports.sendDiscord = functions.https.onRequest((req, res) => {
   console.log("starting...");
   cors(req, res, () => {
     if (req.query.email && req.query.message && req.query.firstName && req.query.lastName) {
       console.log("starting recaptcha check...");
-      fetch("https://www.google.com/recaptcha/api/siteverify?secret=" + functions.config().google.captcha + "&response=" + req.query.token, {
+      fetch("https://www.google.com/recaptcha/api/siteverify?secret=" + "6LdkWNMaAAAAAIHmJtRMiQDKusQFLyKEgfUNVYgb" + "&response=" + req.query.token, {
         method: "post",
         headers: { "Content-Type": "application/json" }
       })

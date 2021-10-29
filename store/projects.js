@@ -1,6 +1,30 @@
 export const state = () => ({
   projects: [
     {
+      name: "Ristorante Lorenzo 🍕",
+      date: "October 2021",
+      desc: "The website of a Italian Restaurant located in Emmen",
+      actions: {
+        1: {
+          name: "Visit",
+          link: "https://ristorantelorenzo.nl/"
+        }
+      },
+      image: require("@/static/RistoranteLorenzo.jpg")
+    },
+    {
+      name: "TipTopIbiza 🏠",
+      date: "Januari 2020",
+      desc: "Website of a Spanish property management company.",
+      actions: {
+        1: {
+          name: "Visit",
+          link: "https://tiptopibiza.com/"
+        }
+      },
+      image: require("@/static/TipTopIbiza.jpg")
+    },
+    {
       name: "FreeFlexr 💪",
       date: "September 2020",
       desc: "One Place to manage all your freeflexing jobs.",
@@ -8,10 +32,6 @@ export const state = () => ({
         0: {
           name: "Github",
           link: "https://github.com/itsmeromian/freeflexr"
-        },
-        1: {
-          name: "Join",
-          link: "https://FreeFlexr.io/"
         }
       },
       image: require("@/static/FreeFlexr.jpg")
@@ -24,29 +44,9 @@ export const state = () => ({
         0: {
           name: "Github",
           link: "https://github.com/itsmeromian/JumboRadio"
-        },
-        1: {
-          name: "Listen",
-          link: "https://jumbo.dyna.host/"
         }
       },
       image: require("@/static/JumboRadio.jpg")
-    },
-    {
-      name: "TipTopIbiza 🏠",
-      date: "Januari 2020",
-      desc: "Website of a Spanish property management company.",
-      actions: {
-        0: {
-          name: "Github",
-          link: "https://github.com/itsmeromian/freeflexr"
-        },
-        1: {
-          name: "Join",
-          link: "https://FreeFlexr.io/"
-        }
-      },
-      image: require("@/static/TipTopIbiza.jpg")
     },
     {
       name: "DynaHotel 🏨",
@@ -56,10 +56,6 @@ export const state = () => ({
         0: {
           name: "Github",
           link: "https://github.com/ItsMeRomian/DynaHotel"
-        },
-        1: {
-          name: "Checkout",
-          link: "https://dynafools.live/"
         }
       },
       image: require("@/static/DynaHotel.jpg")
@@ -87,7 +83,8 @@ export const state = () => ({
         },
         1: {
           name: "Website",
-          link: "friendlytapirs.com"
+          link: "https://friendlytapirs.com",
+          disabled: true,
         }
       },
       image: require("@/static/FriendlyTapirs.jpg")

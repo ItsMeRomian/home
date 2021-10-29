@@ -5,7 +5,7 @@
       <p class="text-left project-date">{{ data.date }}</p>
       <p class="project-desc text-left">{{ data.desc }}<br /><br /></p>
       <span class="buttons">
-        <a class="btn btn-success mx-1" v-for="item in data.actions" :key="item.name" :href="item.link">{{ item.name }}</a>
+        <a class="btn btn-success mx-1" v-for="item in data.actions" :key="item.name" :href="item.link" target="_BLANK">{{ item.name }}</a>
         <!--          <a class="btn btn-success" :href="data.readMore">Read More</a>-->
       </span>
     </div>
