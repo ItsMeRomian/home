@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  height: 100%;
+  background: #191919;
+  color: #f8f8f8;
+}
+:root {
+  --primary: #191919;
+  --secondary: #232323;
+  --trimary: #303030;
+  --text: #f8f8f8;
+  --egg: #f6f0df;
+  --green: #049f76;
+}
+.sick-bg {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
