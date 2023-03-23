@@ -21,7 +21,7 @@ export interface Project {
 
 export const projects = [
   {
-    name: "Lotte Schmidt",
+    name: "Lotte Schmidt 🕵🏼‍♀️",
     slug: "lotte-schmidt",
     date: "January 2022",
     description:
@@ -169,9 +169,9 @@ export const projects = [
     image: "imgs/ModTools.jpg",
   },
   {
+    name: "FriendlyTapirs 💻",
     slug: "friendlytapirs",
     read: "/projects/friendlytapirs",
-    name: "FriendlyTapirs 💻",
     date: "April 2019",
     stack: ["TS"],
     features: [""],
@@ -190,9 +190,9 @@ export const projects = [
     image: "imgs/FriendlyTapirs.jpg",
   },
   {
+    name: "Pasta 🍝",
     slug: "pasta",
     read: "/projects/pasta",
-    name: "Pasta 🍝",
     date: "July 2021",
     stack: ["TS"],
     features: [""],
