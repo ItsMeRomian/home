@@ -1,5 +1,5 @@
 <template>
-  <Head>
+  <Head v-if="data">
     <Title>{{ data.name }} - Romian Tairovski</Title>
     <Meta name="description" :content="data.description" />
     <Meta name="twitter:card" content="summary_large_image" />
@@ -10,7 +10,7 @@
   </Head>
   <Body class="triangle" />
   <Menu />
-  <div class="container mx-auto max-w-[1024px] p-4" v-if="data.name">
+  <div class="container mx-auto max-w-[1024px] p-4" v-if="data && data.name">
     <div class="flex flex-row my-12">
       <h1 class="text-4xl grow font-bold">{{ data.name }}</h1>
       <div class="">

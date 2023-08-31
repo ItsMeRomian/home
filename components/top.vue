@@ -16,7 +16,7 @@
             <Icon class="mx-2 hover:text-blueaccent" name="uil:linkedin" />
           </NuxtLink>
           <NuxtLink to="https://twitter.com/itsmeromian" target="_BLANK">
-            <Icon name="uil:twitter" class="hover:text-blueaccent" />
+            <Icon name="simple-icons:x" class="hover:text-blueaccent p-0.5" />
           </NuxtLink>
         </span>
       </div>

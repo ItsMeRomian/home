@@ -4,6 +4,7 @@ export default defineEventHandler((event) => {
 
 export interface Project {
   slug: string;
+  title?: string;
   date: string;
   description: string;
   stack: string[];

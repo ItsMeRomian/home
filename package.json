@@ -8,15 +8,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.5.2",
-    "autoprefixer": "^10.4.14",
-    "nuxt": "^3.3.1",
-    "nuxt-icon": "^0.3.3",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "autoprefixer": "^10.4.15",
+    "nuxt": "^3.7.0",
+    "nuxt-icon": "^0.5.0",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
-    "three": "^0.124.0",
+    "three": "^0.156.0",
     "vue-recaptcha-v3": "^2.0.1"
   }
 }
