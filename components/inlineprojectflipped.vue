@@ -16,19 +16,24 @@
         <p class="text-left project-date italic mb-2">{{ data.date }}</p>
         <p class="project-desc font-light text-left">{{ data.description }}</p>
       </div>
-      <span class="buttons pb-2 text-left lg:text-end mt-10">
-        <a
-          class="text-egg px-4 py-2 rounded-md mr-2 bg-blueaccent"
+      <span
+        class="buttons pb-2 text-left lg:text-end mt-10 flex gap-2 flex-row-reverse"
+      >
+        <button-comp
           v-for="item in data.actions"
           :key="item.name"
           :href="item.link"
+          :title="item.name"
           target="_BLANK"
+          :light="true"
         >
           {{ item.name }}
-        </a>
-        <span class="bg-blueaccent text-egg px-4 py-2 rounded-md mr-2">
-          <nuxt-link :to="data.read">Read More</nuxt-link>
-        </span>
+        </button-comp>
+        <button-comp
+          :light="true"
+          title="Read More"
+          :action="() => $router.push(data.read)"
+        />
       </span>
     </div>
   </div>

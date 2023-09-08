@@ -21,12 +21,11 @@
         <Inlineprojectflipped :data="projects[1]" />
         <Inlineproject :data="projects[2]" />
         <Inlineprojectflipped :data="projects[3]" />
-        <span
-          class="text-2xl font-bold py-3 px-5 bg-secondary rounded-sm cursor-pointer hover:bg-trimary"
-          @click="() => (more = true)"
+        <button-comp
+          :action="() => (more = true)"
+          title="More"
           v-if="!more"
-          >More</span
-        >
+        ></button-comp>
         <template v-if="more">
           <Inlineproject :data="projects[4]" />
           <Inlineprojectflipped :data="projects[5]" />
