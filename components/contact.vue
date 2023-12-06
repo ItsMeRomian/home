@@ -48,6 +48,8 @@
     </div>
     <div>
       <button
+        type="submit"
+        id="submit"
         class="bg-trimary hover:bg-blueaccent rounded-md w-full px-2 py-4 text-2xl font-bold"
       >
         {{ state }}
