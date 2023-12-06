@@ -5,6 +5,7 @@
   >
     <div class="text-primary">
       <input
+        id="firstName"
         required
         class="w-full p-2 rounded-sm text-primary"
         type="text"
@@ -15,6 +16,7 @@
     </div>
     <div>
       <input
+        id="lastName"
         required
         class="w-full p-2 rounded-sm text-primary"
         type="text"
@@ -25,6 +27,7 @@
     </div>
     <div>
       <input
+        id="email"
         required
         class="w-full p-2 rounded-sm text-primary"
         type="email"
@@ -35,6 +38,7 @@
     </div>
     <div class="row-span-2">
       <textarea
+        id="message"
         required
         class="w-full p-2 rounded-sm text-primary"
         aria-label="With textarea"
