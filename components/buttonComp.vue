@@ -1,6 +1,6 @@
 <template>
   <span
-    class="text-2xl font-bold py-3 px-5 rounded-sm cursor-pointer"
+    class="text-2xl font-bold py-3 px-5 rounded-md cursor-pointer"
     :class="
       props.light
         ? 'bg-blueaccent text-egg'
