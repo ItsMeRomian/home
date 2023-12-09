@@ -11,19 +11,19 @@ module.exports = {
   theme: {
     colors: {
       primary: "#191919",
-      secondary: "#232323",
-      trimary: "#303030",
-      text: "#F8F8F8",
+      secondary: "#444444",
+      trimary: "#4F5960",
+      text: "#F2ECFF",
     },
     extend: {
       colors: {
         primary: "#191919",
-        secondary: "#232323",
-        trimary: "#303030",
-        text: "#F8F8F8",
+        secondary: "#444444",
+        trimary: "#4F5960",
+        text: "#F2ECFF",
         egg: "#F6F0DF",
-        green: "#049F76",
-        blueaccent: "#5270e1",
+        green: "#00C896",
+        blueaccent: "#00C896",
       },
     },
   },

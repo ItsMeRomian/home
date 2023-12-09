@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-secondary my-5 py-5">
-    <p class="text-center">&copy; Romian Tairovski 2021</p>
+  <div class="flex flex-col gap-4 bg-secondary my-4 py-4 text-center">
+    <icons />
+    <p class>&copy; Romian Tairovski 2023</p>
   </div>
 </template>
