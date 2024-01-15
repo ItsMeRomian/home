@@ -15,7 +15,7 @@
       <h1 class="text-4xl grow font-bold">{{ data.name }}</h1>
       <div class="">
         <a
-          class="bg-secondary text-egg px-4 py-2 rounded-sm mr-2"
+          class="bg-secondary px-4 py-2 rounded-sm mr-2"
           v-for="item in data?.actions"
           :key="item.name"
           :href="item.link"

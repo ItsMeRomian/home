@@ -64,15 +64,24 @@ import {
   useReCaptcha,
   VueReCaptcha,
 } from "vue-recaptcha-v3";
+import { faker } from "@faker-js/faker";
+const enviroment = useRuntimeConfig();
 
 const state = ref("Submit");
 const messageSend = ref(false);
-const data = ref({
-  firstName: "",
-  lastName: "",
-  email: "",
-  message: "",
-});
+const data = enviroment.prod
+  ? ref({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    })
+  : ref({
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      email: faker.internet.email(),
+      message: faker.lorem.paragraph(),
+    });
 let recaptchaInstance: IReCaptchaComposition;
 
 onMounted(() => {
@@ -91,22 +100,19 @@ const getToken = async () => {
 const onSubmit = async () => {
   state.value = "Please wait...";
   try {
-    const { data: res } = await useFetch(
-      "https://us-central1-itsmeromian.cloudfunctions.net/DynaFoolsContactForm",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          firstName: data.value.firstName,
-          lastName: data.value.lastName,
-          message: data.value.message,
-          email: data.value.email,
-          token: await getToken(),
-        }),
-      }
-    );
-    (res.value as any).success
+    const { data: res } = await useFetch("/api/sendDiscord", {
+      method: "POST",
+      body: {
+        firstName: data.value.firstName,
+        lastName: data.value.lastName,
+        message: data.value.message,
+        email: data.value.email,
+        token: await getToken(),
+      },
+    });
+    (res.value && res.value.m) === "OK"
       ? (state.value = "Message Sent!")
-      : (state.value = `Hmm.. ${res.value as any}`);
+      : (state.value = `Hmm.. ${res.value?.m}`);
     console.log(res.value);
   } catch (error) {
     state.value = "Hmm.. Something went wrong";
