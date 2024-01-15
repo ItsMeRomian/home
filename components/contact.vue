@@ -69,19 +69,20 @@ const enviroment = useRuntimeConfig();
 
 const state = ref("Submit");
 const messageSend = ref(false);
-const data = enviroment.prod
-  ? ref({
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
-    })
-  : ref({
-      firstName: faker.name.firstName(),
-      lastName: faker.name.lastName(),
-      email: faker.internet.email(),
-      message: faker.lorem.paragraph(),
-    });
+const data =
+  enviroment.public.prod === "true"
+    ? ref({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      })
+    : ref({
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        email: faker.internet.email(),
+        message: faker.lorem.paragraph(),
+      });
 let recaptchaInstance: IReCaptchaComposition;
 
 onMounted(() => {
