@@ -3,7 +3,7 @@
     <Title>{{ data.name }} - Romian Tairovski</Title>
     <Meta name="description" :content="data.description" />
     <Meta name="twitter:card" content="summary_large_image" />
-    <Meta name="twitter:title" :content="data?.title + ' - Romian Tairovski'" />
+    <Meta name="twitter:title" :content="data.name + ' - Romian Tairovski'" />
     <Meta name="twitter:description" :content="data.description" />
     <Meta name="twitter:image" :content="data.image" />
     <Meta name="og:image" :content="data.image" />
@@ -11,23 +11,28 @@
   <Body class="triangle" />
   <Menu />
   <div class="container mx-auto max-w-[1024px] p-4" v-if="data && data.name">
-    <div class="flex flex-row my-12">
-      <h1 class="text-4xl grow font-bold">{{ data.name }}</h1>
+    <div class="flex flex-row gap-4mb-12 md:my-12">
+      <h1 class="text-4xl grow font-bold text-wrap">{{ data.name }}</h1>
       <div class="">
         <a
-          class="bg-secondary px-4 py-2 rounded-sm mr-2"
+          class="bg-secondary px-8 py-4 rounded-sm mr-2 hover:bg-primary text-md font-extrabold uppercase inline-flex items-center justify-center flex-row"
           v-for="item in data?.actions"
           :key="item.name"
           :href="item.link"
           target="_BLANK"
         >
           {{ item.name }}
+          <Icon
+            name="ic:sharp-arrow-forward-ios"
+            class="hover:text-blueaccent"
+          />
         </a>
       </div>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <span class="p-4 rounded-sm">
-        <b class="uppercase">Idea</b><br />
+        <b class="uppercase">Idea</b>
+        <br />
         <hr class="my-2 border-blueaccent" />
         {{ data?.description }}
         <br />
@@ -47,10 +52,10 @@
       />
     </div>
     <div class="bg-secondary py-4 px-8 rounded-sm my-4">
-      <p class="text-justify">
-        <ClientOnly
-          ><span v-html="data?.summary" class="inner-story"></span
-        ></ClientOnly>
+      <p class="">
+        <ClientOnly>
+          <span v-html="data?.summary" class="inner-story"> </span>
+        </ClientOnly>
       </p>
     </div>
   </div>
@@ -61,7 +66,7 @@
     <h1 class="text-4xl grow font-bold">404</h1>
     <p>This project does not exist.</p>
   </div>
-  <Footer />
+  <Footer v-if="data" />
 </template>
 <script setup lang="ts">
 const { data } = await useFetch(`/api/project/${useRoute().params.id}`);

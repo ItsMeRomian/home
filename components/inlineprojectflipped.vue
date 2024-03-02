@@ -1,10 +1,10 @@
 <template>
   <div
-    class="grid grid-cols-1 lg:grid-cols-2 w-full text-left mb-10 shadow-xl"
+    class="grid grid-cols-1 md:grid-cols-2 w-full text-left mb-10 shadow-xl"
     v-if="data"
   >
     <div
-      class="hidden lg:block bg-trimary z-10 translate-x-[1rem] translate-y-[0.5rem] hover:translate-x-0 hover:translate-y-0 transition-all duration-300 rounded-lg"
+      class="hidden md:block bg-trimary z-10 translate-x-[1rem] translate-y-[0.5rem] hover:translate-x-0 hover:translate-y-0 transition-all duration-300 rounded-lg"
     >
       <img :src="data.image" class="w-full h-full p-4" alt="Project Image" />
     </div>
@@ -17,7 +17,7 @@
         <p class="project-desc font-light text-left">{{ data.description }}</p>
       </div>
       <span
-        class="buttons pb-2 text-left lg:text-end mt-10 flex gap-2 flex-row-reverse"
+        class="buttons pb-2 text-left md:text-end mt-10 flex gap-2 md:flex-row-reverse"
       >
         <button-comp
           v-for="item in data.actions"
@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { Project } from "~~/server/api/project/[id]";
+import type { Project } from "~~/server/api/project/[id]";
 
 const props = defineProps<{ data: Project }>();
 </script>

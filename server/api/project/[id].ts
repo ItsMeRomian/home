@@ -26,7 +26,7 @@ export const projects = [
     slug: "lotte-schmidt",
     date: "January 2022",
     description:
-      "A website where my girlfriend can post her latest articles. Using Nuxt3, Firebase Auth, Firestore and Storage.",
+      "A website where a local journalist can post her latest articles. Using Nuxt3, Firebase Auth, Firestore and Storage.",
     stack: ["Nuxt3", "TipTap", "Firebase", "Vercel"],
     read: "/projects/lotte-schmidt",
     features: [
@@ -36,7 +36,7 @@ export const projects = [
       "Easy image, file and audio uploading",
     ],
     summary:
-      "<p>Welcome to the website of Lotte Schmidt, a journalist who writes about various topics and shares her insights with her readers. </p> <p class='uppercase font-bold'>How It Works</p> <p>This website is powered by Nuxt3, a framework that allows for server-side rendering (SSR) of web pages. This means that the pages are pre-rendered on the server and sent to the browser as HTML, which improves the performance, accessibility, and SEO of the website.</p> <p>The content of the website is stored in Firebase, a cloud platform that provides authentication, database, and storage services. Firebase Authentication handles the login and registration of users, Firebase Realtime Database stores the articles written by Lotte, and Firebase Storage hosts the images and other media files.</p> <p>The website is deployed on Vercel, a cloud platform that specializes in hosting static and JAMstack websites. Vercel offers fast and reliable hosting, automatic SSL certificates, and continuous integration and delivery (CI/CD) workflows. This ensures that the website is always online and updated with the latest content.</p> <p class='uppercase font-bold'>Why It Matters</p> <p>This website is more than just a showcase of Lotte’s work. It is also a way for her to connect with her audience and share her opinions and perspectives on various issues. By using Nuxt3, Firebase, and Vercel, I was able to create a website that is easy to manage, update, and access for both Lotte and her readers.</p> <p>If you are interested in creating a similar website for your own content, or if you have any questions or feedback, please feel free to contact me. I   would love to hear from you and help you with your web development needs. Thank you for reading!</p>",
+      "<p>Welcome to the website of Lotte Schmidt, a journalist who writes about various topics and shares her insights with her readers. </p> <p class='uppercase font-bold'>How It Works</p> <p>This website is powered by Nuxt3, a framework that allows for server-side rendering (SSR) of web pages. This means that the pages are pre-rendered on the server and sent to the browser as HTML, which improves the performance, accessibility, and SEO of the website.</p> <p>The content of the website is stored in Firebase, a cloud platform that provides authentication, database, and storage services. Firebase Authentication handles the login and registration of users, Firebase Realtime Database stores the articles written by Lotte, and Firebase Storage hosts the images and other media files.</p> <p>The website is deployed on Vercel, a cloud platform that specializes in hosting static and JAMstack websites. Vercel offers fast and reliable hosting, automatic SSL certificates, and continuous integration and delivery (CI/CD) workflows. This ensures that the website is always online and updated with the latest content.</p> <p class='uppercase font-bold'>Why It Matters</p> <p>This website is more than just a showcase of Lotte’s work. It is also a way for her to connect with her audience and share her opinions and perspectives on various issues. I've created a website that is easy to manage, update, and access for both Lotte and her readers.</p> <p>If you are interested in creating a similar website for your own content, or if you have any questions or feedback, please feel free to contact me. I   would love to hear from you and help you with your web development needs. Thank you for reading!</p>",
     actions: [
       {
         name: "Visit",
@@ -59,7 +59,7 @@ export const projects = [
       "Easy to use reservation form",
     ],
     summary:
-      "<p> This is the website of a local italian restaurant located in Emmen. It showcases the menu of the restaurant, the opening hours and contact details. The website also includes a reservation form.</p> <p>The website was built using Nuxt 3, a framework for Vue that allows for server-side rendering and static site generation. This improves the performance and SEO of the website, as well as simplifying the deployment process.</p> <p>I also used Tailwind CSS and NuxtUI.</p><p>For the backend, I used Firebase and VercelKV. This allows the owners of the restaurant to change any details on the page using a admin dashboard.</p><p>Before coding the website, I designed it first in Figma, a collaborative design tool that allows to create wireframes, mockups and prototypes. Figma helps to visualize how the website will look like and get feedback from clients and users.</p><p>You can check out the website here: <a href='https://ristorantelorenzo.nl' style='color: #5270e1; text-decoration: underline;'>https://ristorantelorenzo.nl</a> I hope you like it and feel free to contact me if you have any questions or comments about this project.</p>",
+      "<p> This is the website of a local italian restaurant located in Emmen. It showcases the menu of the restaurant, the opening hours and contact details. The website also includes a reservation form.</p> <p class='uppercase font-bold'>How It Works</p><p>The website was built using Nuxt 3, a framework for Vue that allows for server-side rendering and static site generation. This improves the performance and SEO of the website, as well as simplifying the deployment process.</p> <p>I also used Tailwind CSS and NuxtUI.</p><p>For the backend, I used Firebase and VercelKV. This allows the owners of the restaurant to change any details on the page using a admin dashboard.</p><p>Before coding the website, I designed it first in Figma, a collaborative design tool that allows to create wireframes, mockups and prototypes. Figma helps to visualize how the website will look like and get feedback from clients and users.</p><p class='uppercase font-bold'>Check it out</p><p> <a href='https://ristorantelorenzo.nl' style='color: #5270e1; text-decoration: underline;'>https://ristorantelorenzo.nl</a> I hope you like it and feel free to contact me if you have any questions or comments about this project.</p>",
     actions: [
       {
         name: "Visit",
@@ -119,7 +119,7 @@ export const projects = [
     image: "imgs/FreeFlexr.jpg",
   },
   {
-    name: "SupermarketRadio 📻",
+    name: "Supermarket_Radio 📻",
     slug: "jumboradio",
     date: "May 2021",
     read: "/projects/jumboradio",

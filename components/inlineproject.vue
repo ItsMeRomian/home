@@ -1,10 +1,10 @@
 <template>
   <div
-    class="grid grid-cols-1 w-full text-left mb-10 shadow-xl lg:grid-cols-2"
+    class="grid grid-cols-1 w-full text-left mb-10 shadow-xl md:grid-cols-2"
     v-if="data.name"
   >
     <div
-      class="p-4 flex flex-col rounded-lg bg-secondary z-10 lg:translate-x-[1rem] lg:translate-y-[0.5rem] lg:hover:translate-x-0 lg:hover:translate-y-0 lg:transition-all lg:duration-300 shadow-lg"
+      class="p-4 flex flex-col rounded-lg bg-secondary z-10 md:translate-x-[1rem] md:translate-y-[0.5rem] md:hover:translate-x-0 md:hover:translate-y-0 md:transition-all md:duration-300 shadow-lg"
     >
       <div class="text grow">
         <h1 class="text-4xl font-bold">{{ data.name }}</h1>
@@ -29,14 +29,14 @@
         />
       </span>
     </div>
-    <div class="bg-trimary z-20 rounded-lg shadow-xl hidden lg:block">
+    <div class="bg-trimary z-20 rounded-lg shadow-xl hidden md:block">
       <img :src="data.image" class="w-full h-full p-5" alt="Project Image" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Project } from "~~/server/api/project/[id]";
+import type { Project } from "~/server/api/project/[id]";
 
 const props = defineProps<{ data: Project }>();
 </script>
