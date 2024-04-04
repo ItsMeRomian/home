@@ -60,7 +60,7 @@
 
 <script setup lang="ts">
 import {
-  IReCaptchaComposition,
+  type IReCaptchaComposition,
   useReCaptcha,
   VueReCaptcha,
 } from "vue-recaptcha-v3";

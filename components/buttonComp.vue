@@ -1,7 +1,7 @@
 <template>
   <span
-    class="text-2xl font-bold py-3 px-5 rounded-md cursor-pointer"
-    :class="props.light ? 'bg-blueaccent ' : 'bg-secondary  hover:bg-trimary'"
+    class="text-xl font-bold py-3 px-4 rounded-md cursor-pointer shadow-xl"
+    :class="props.light ? 'bg-blueaccent ' : 'bg-secondary  hover:bg-black'"
     @click="() => props.action && props.action()"
   >
     <a v-if="props.href" :href="props.href" target="_blank">
