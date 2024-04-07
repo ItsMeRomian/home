@@ -22,6 +22,52 @@ export interface Project {
 
 export const projects = [
   {
+    name: "MCDash 🤖",
+    slug: "mcdash",
+    date: "Februari 2024",
+    description:
+      "Minecraft server dashboard for managing your server and players.",
+    stack: ["Nuxt3", "NuxtUI", "Postgres", "Docker"],
+    read: "/projects/mcdash",
+    features: [
+      "Server Side Rendered (SSR)",
+      "API",
+      "Host alongside the Minecraft server",
+    ],
+    summary:
+      "A simple Minecraft server dashboard. Using Nuxt3, ServerTap, NuxtUI. Made to be running ON the machine that runs the minecraft server, so the ServerTap port does not have to be exposed. Kinda only looks good on mobile.",
+    actions: [
+      {
+        name: "Github",
+        link: "https://github.com/itsmeromian/mcdash",
+      }
+    ],
+    image: "imgs/mcdash.jpg",
+  },
+  {
+    name: "Shortr 🚀",
+    slug: "shortr",
+    date: "April 2024",
+    description:
+      "A URL shortener that allows users to create short links. Allows anyone to check where the link goes and who opened it.",
+    stack: ["Nuxt3", "NuxtUI", "Postgres", "Docker"],
+    read: "/projects/shortr",
+    features: [
+      "Server Side Rendered (SSR)",
+      "API",
+      "Analytics"
+    ],
+    summary:
+      "<p>Welcome to Shortr, a URL shortener that allows you to create short links and track their performance. With Shortr, you can easily shorten long URLs into short, easy-to-share links. You can also track the number of clicks, the location of the users, and the devices they are using to access your links. </p> <p class='uppercase font-bold'>How It Works</p> <p>Shortr is built with Nuxt3, a modern web framework that allows for server-side rendering (SSR) of web pages. This improves the performance and SEO of the website, as well as simplifying the deployment process. The frontend of the website is designed with NuxtUI, a component library that provides pre-designed elements for building user interfaces. The backend of the website is powered by a PostgreSQL database that stores the links and analytics data. Read the Github page to learn how to quickly set this up on your own domain.</p> <p>Thank you for reading :) <br /><br />",
+    actions: [
+      {
+        name: "Github",
+        link: "https://github.com/itsmeromian/Shortr",
+      }
+    ],
+    image: "imgs/Shortr.jpg",
+  },
+  {
     name: "Journalist CMS 📰",
     slug: "journalist-crm",
     date: "January 2022",
@@ -40,7 +86,6 @@ export const projects = [
     actions: [],
     image: "imgs/JournalistCRM.jpg",
   },
-
   {
     name: "Ristorante Lorenzo 🍕",
     slug: "ristorante-lorenzo",

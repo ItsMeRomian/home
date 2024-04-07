@@ -70,7 +70,6 @@
 </template>
 <script setup lang="ts">
 const { data } = await useFetch(`/api/project/${useRoute().params.id}`);
-console.log(data.value);
 </script>
 <style>
 body.triangle {
