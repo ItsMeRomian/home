@@ -66,6 +66,7 @@ import {
 } from "vue-recaptcha-v3";
 import { faker } from "@faker-js/faker";
 const enviroment = useRuntimeConfig();
+const { gtag } = useGtag();
 
 const state = ref("Submit");
 const messageSend = ref(false);
@@ -111,9 +112,12 @@ const onSubmit = async () => {
         token: await getToken(),
       },
     });
-    (res.value && res.value.m) === "OK"
-      ? (state.value = "Message Sent!")
-      : (state.value = `Hmm.. ${res.value?.m}`);
+    if ((res.value && res.value.m) === "OK") {
+      state.value = "Message Sent!";
+      gtag("event", "send_form_1");
+    } else {
+      state.value = `Hmm.. ${res.value?.m}`;
+    }
     console.log(res.value);
   } catch (error) {
     state.value = "Hmm.. Something went wrong";

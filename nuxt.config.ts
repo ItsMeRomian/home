@@ -11,8 +11,23 @@ export default defineNuxtConfig({
       ],
     },
   },
+  gtag: {
+    id: 'G-4JY9JNBETR'
+  },
+  gtm: {
+    id: "GTM-KZHX6MM3",
+    defer: false,
+    compatibility: false,
+    nonce: "2726c7f26c",
+    enabled: true,
+    debug: true,
+    loadScript: true,
+    enableRouterSync: true,
+    trackOnNextTick: false,
+    devtools: true,
+  },
   css: ["~/assets/css/main.css"],
-  modules: ["nuxt-icon"],
+  modules: ["nuxt-icon", "nuxt-gtag", "@zadigetvoltaire/nuxt-gtm"],
   postcss: {
     plugins: {
       tailwindcss: {},
