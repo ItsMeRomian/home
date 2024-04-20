@@ -1,13 +1,13 @@
 <template>
   <form
     @submit.prevent="onSubmit()"
-    class="bg-secondary p-5 grid grid-cols-2 gap-4 max-w-[980px] mx-auto my-10"
+    class="bg-secondary p-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-[980px] mx-auto my-10 rounded-lg"
   >
-    <div class="text-primary">
+    <div>
       <input
         id="firstName"
         required
-        class="w-full p-2 rounded-sm text-primary"
+        class="w-full p-2 rounded-sm bg-secondary border hover:bg-trimary focus:bg-trimary focus:outline-none"
         type="text"
         aria-label="First name"
         placeholder="First Name"
@@ -18,7 +18,7 @@
       <input
         id="lastName"
         required
-        class="w-full p-2 rounded-sm text-primary"
+        class="w-full p-2 rounded-sm bg-secondary border hover:bg-trimary focus:bg-trimary focus:outline-none"
         type="text"
         aria-label="Last name"
         placeholder="Last Name"
@@ -29,7 +29,7 @@
       <input
         id="email"
         required
-        class="w-full p-2 rounded-sm text-primary"
+        class="w-full p-2 rounded-sm bg-secondary border hover:bg-trimary focus:bg-trimary focus:outline-none"
         type="email"
         aria-label="Last name"
         placeholder="Your Email"
@@ -40,19 +40,33 @@
       <textarea
         id="message"
         required
-        class="w-full p-2 rounded-sm text-primary"
+        class="w-full p-2 rounded-sm bg-secondary border hover:bg-trimary focus:bg-trimary focus:outline-none min-h-[140px] md:min-h-[200px]"
         aria-label="With textarea"
         placeholder="Your Message"
         v-model="data.message"
       ></textarea>
     </div>
-    <div>
+    <div class="s place-self-end w-full">
       <button
         type="submit"
         id="submit"
-        class="bg-trimary hover:bg-blueaccent rounded-md w-full px-2 py-4 text-2xl font-bold"
+        class="bg-trimary hover:bg-blueaccent rounded-md w-full px-2 text-2xl font-bold transition-all duration-50 mt-auto"
+        :class="{ 'py-4': state !== 'LOADING', 'py-2': state == 'LOADING' }"
       >
-        {{ state }}
+        <Icon
+          class="h-12 w-12"
+          name="eos-icons:three-dots-loading"
+          v-if="state === 'LOADING'"
+        />
+        <span v-if="state === 'FAILED'">
+          Failed
+          <Icon name="material-symbols:cancel" />
+        </span>
+        <span v-if="state === 'READY'">Send</span>
+        <span v-if="state === 'SUCCESS'">
+          Sent
+          <Icon name="material-symbols:check-circle" />
+        </span>
       </button>
     </div>
   </form>
@@ -68,8 +82,7 @@ import { faker } from "@faker-js/faker";
 const enviroment = useRuntimeConfig();
 const { gtag } = useGtag();
 
-const state = ref("Submit");
-const messageSend = ref(false);
+const state = ref<"READY" | "SUCCESS" | "FAILED" | "LOADING">("READY");
 const data =
   enviroment.public.prod === "true"
     ? ref({
@@ -79,8 +92,8 @@ const data =
         message: "",
       })
     : ref({
-        firstName: faker.name.firstName(),
-        lastName: faker.name.lastName(),
+        firstName: faker.person.firstName(),
+        lastName: faker.person.lastName(),
         email: faker.internet.email(),
         message: faker.lorem.paragraph(),
       });
@@ -90,7 +103,9 @@ onMounted(() => {
   const { vueApp } = useNuxtApp();
   vueApp.use(VueReCaptcha, {
     siteKey: "6Lf4HgAdAAAAAP6hP8Ao3bwrtT1zvmLF-GPH6G6H",
-    loaderOptions: {},
+    loaderOptions: {
+      autoHideBadge: true,
+    },
   });
   recaptchaInstance = useReCaptcha() as IReCaptchaComposition;
 });
@@ -100,7 +115,7 @@ const getToken = async () => {
 };
 
 const onSubmit = async () => {
-  state.value = "Please wait...";
+  state.value = "LOADING";
   try {
     const { data: res } = await useFetch("/api/sendDiscord", {
       method: "POST",
@@ -113,33 +128,15 @@ const onSubmit = async () => {
       },
     });
     if ((res.value && res.value.m) === "OK") {
-      state.value = "Message Sent!";
+      state.value = "SUCCESS";
       gtag("event", "send_form_1");
     } else {
-      state.value = `Hmm.. ${res.value?.m}`;
+      state.value = "FAILED";
     }
     console.log(res.value);
   } catch (error) {
-    state.value = "Hmm.. Something went wrong";
+    state.value = "FAILED";
     console.log("sendMessage error:", error);
   }
 };
 </script>
-
-<style scoped>
-textarea {
-  height: 100%;
-}
-.form-control {
-  background: var(--trimary);
-  border: none;
-  color: var(--text);
-  min-height: 3.85rem;
-}
-.submit-button {
-  font-size: 2rem;
-  font-family: Roboto, sans-serif;
-  font-weight: 900;
-  color: var(--text);
-}
-</style>

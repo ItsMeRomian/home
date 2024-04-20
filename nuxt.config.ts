@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     devtools: true,
   },
   css: ["~/assets/css/main.css"],
-  modules: ["nuxt-icon", "nuxt-gtag", "@zadigetvoltaire/nuxt-gtm"],
+  modules: ["nuxt-icon", "nuxt-gtag", "@zadigetvoltaire/nuxt-gtm", '@vueuse/nuxt'],
   postcss: {
     plugins: {
       tailwindcss: {},

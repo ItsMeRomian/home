@@ -11,34 +11,31 @@
       content="Software developer from the Netherlands."
     />
   </Head>
-  <top />
+  <Top />
   <div class="container mx-auto my-10 max-w-[1024px]">
     <div class="projects text-center mx-4 lg:mx-0">
       <h2 class="text-4xl font-extrabold" id="projects">Projects</h2>
       <hr class="mx-5 my-4" />
       <div v-if="projects">
-        <Inlineproject :data="projects[0]" />
-        <Inlineprojectflipped :data="projects[1]" />
-        <Inlineproject :data="projects[2]" />
-        <Inlineprojectflipped :data="projects[3]" />
-        <button-comp
+        <template v-for="(project, i) in projects.slice(0, 4)">
+          <Project :data="project" :flip="!!(i % 2)" />
+        </template>
+        <ButtonComp
           :action="() => (more = true)"
           title="More"
           v-if="!more"
-        ></button-comp>
-        <template v-if="more">
-          <Inlineproject :data="projects[4]" />
-          <Inlineprojectflipped :data="projects[5]" />
-          <Inlineproject :data="projects[6]" />
-          <Inlineprojectflipped :data="projects[7]" />
-          <Inlineproject :data="projects[8]" />
+        ></ButtonComp>
+        <template v-if="more" v-for="(project, i) in projects.slice(4)">
+          <Project :data="project" :flip="!!(i % 2)" />
         </template>
       </div>
     </div>
-    <div class="contact text-center mt-10">
-      <h2 class="contact-title text-4xl font-bold my-2">Send me a message</h2>
+    <div class="text-center mt-10 mx-4 md:mx-0">
+      <h2 class="text-4xl font-bold my-2">Send me a message</h2>
       <hr class="divider" />
-      <ClientOnly><contact /></ClientOnly>
+      <ClientOnly fallback-tag="span" fallback="Loading contact form...">
+        <Contact />
+      </ClientOnly>
     </div>
   </div>
   <Footer />
@@ -48,13 +45,3 @@
 const more = ref(false);
 const { data: projects } = useFetch("/api/projects");
 </script>
-
-<style>
-.intro {
-  background-image: url("/imgs/download.svg");
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: top;
-  background-size: contain;
-}
-</style>

@@ -22,6 +22,28 @@ export interface Project {
 
 export const projects = [
   {
+    name: "Local-Lightshot-Server 📸",
+    slug: "locallightshotserver",
+    date: "April 2024",
+    description:
+      "A local server for lightshot. Made with bun. Imitates the prntscr.com api",
+    stack: ["Bun", "Docker", "Lightshot"],
+    read: "/projects/locallightshotserver",
+    features: [
+      "API",
+      "Local"
+    ],
+    summary:
+      "A local server for lightshot. Made with bun (in 50 lines lol). <br> Imitates the http://upload.prntscr.com/upload/ api",
+    actions: [
+      {
+        name: "Github",
+        link: "https://github.com/itsmeromian/local-lightshot-server",
+      }
+    ],
+    image: "imgs/lightshot.jpg",
+  },
+  {
     name: "MCDash 🤖",
     slug: "mcdash",
     date: "Februari 2024",
@@ -82,7 +104,7 @@ export const projects = [
       "Easy image, file and audio uploading",
     ],
     summary:
-      "<p>Welcome to the website of Annemiek Janse, a journalist who writes about various topics and shares her insights with her readers. </p> <p class='uppercase font-bold'>How It Works</p> <p>This website is powered by Nuxt3, a framework that allows for server-side rendering (SSR) of web pages. This means that the pages are pre-rendered on the server and sent to the browser as HTML, which improves the performance, accessibility, and SEO of the website.</p> <p>The content of the website is stored in Firebase, a cloud platform that provides authentication, database, and storage services. Firebase Authentication handles the login and registration of users, Firebase Realtime Database stores the articles written by Annemiek, and Firebase Storage hosts the images and other media files.</p> <p>The website is deployed on Vercel, a cloud platform that specializes in hosting static and JAMstack websites. Vercel offers fast and reliable hosting, automatic SSL certificates, and continuous integration and delivery (CI/CD) workflows. This ensures that the website is always online and updated with the latest content.</p> <p class='uppercase font-bold'>Why It Matters</p> <p>This website is more than just a showcase of Annemiek\'s work. It is also a way for her to connect with her audience and share her opinions and perspectives on various issues. I've created a website that is easy to manage, update, and access for both Annemiek and her readers.</p> <p>If you are interested in creating a similar website for your own content, or if you have any questions or feedback, please feel free to contact me. I   would love to hear from you and help you with your web development needs. Thank you for reading! <br /><br /> <p>Here are some screenshots from the admin page:</p><img src='/imgs/journalistcrm-admin1.jpg'/><br/><img src='/imgs/journalistcrm-admin2.jpg'/>",
+      "<p>Welcome to the website of a journalist who writes about various topics and shares her insights with her readers. </p> <p class='uppercase font-bold'>How It Works</p> <p>This website is powered by Nuxt3, a framework that allows for server-side rendering (SSR) of web pages. This means that the pages are pre-rendered on the server and sent to the browser as HTML, which improves the performance, accessibility, and SEO of the website.</p> <p>The content of the website is stored in Firebase, a cloud platform that provides authentication, database, and storage services. Firebase Authentication handles the login and registration of users, Firebase Realtime Database stores the articles written by Annemiek, and Firebase Storage hosts the images and other media files.</p> <p>The website is deployed on Vercel, a cloud platform that specializes in hosting static and JAMstack websites. Vercel offers fast and reliable hosting, automatic SSL certificates, and continuous integration and delivery (CI/CD) workflows. This ensures that the website is always online and updated with the latest content.</p> <p class='uppercase font-bold'>Why It Matters</p> <p>This website is more than just a showcase of Annemiek\'s work. It is also a way for her to connect with her audience and share her opinions and perspectives on various issues. I've created a website that is easy to manage, update, and access for both Annemiek and her readers.</p> <p>If you are interested in creating a similar website for your own content, or if you have any questions or feedback, please feel free to contact me. I   would love to hear from you and help you with your web development needs. Thank you for reading! <br /><br /> <p>Here are some screenshots from the admin page:</p><img src='/imgs/journalistcrm-admin1.jpg'/><br/><img src='/imgs/journalistcrm-admin2.jpg'/>",
     actions: [],
     image: "imgs/JournalistCRM.jpg",
   },
