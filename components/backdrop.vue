@@ -10,13 +10,13 @@ import { useResizeObserver } from "@vueuse/core";
 
 const bgRef = ref<HTMLElement>();
 
-onMounted(async () => {
-  _onLoad();
+// onMounted(async () => {
+//   _onLoad();
 
-  useResizeObserver(bgRef, () => {
-    _onResize();
-  });
-});
+//   useResizeObserver(bgRef, () => {
+//     _onResize();
+//   });
+// });
 
 const refreshDuration = 10000;
 let refreshTimeout: string | number | NodeJS.Timeout | undefined;

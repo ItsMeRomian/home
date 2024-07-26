@@ -13,7 +13,7 @@
     "@vueuse/nuxt": "^10.9.0",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
     "autoprefixer": "^10.4.19",
-    "nuxt": "^3.11.2",
+    "nuxt": "^3.12.4",
     "nuxt-gtag": "^2.0.5",
     "nuxt-icon": "^0.6.10",
     "postcss": "^8.4.38",
@@ -22,5 +22,6 @@
   "dependencies": {
     "discord.js": "^14.14.1",
     "vue-recaptcha-v3": "^2.0.1"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

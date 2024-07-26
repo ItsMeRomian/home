@@ -14,8 +14,7 @@
   <Top />
   <div class="container mx-auto my-10 max-w-[1024px]">
     <div class="projects text-center mx-4 lg:mx-0">
-      <h2 class="text-4xl font-extrabold" id="projects">Projects</h2>
-      <hr class="mx-5 my-4" />
+      <h2 class="text-4xl font-extrabold mb-20" id="projects">Projects</h2>
       <div v-if="projects">
         <template v-for="(project, i) in projects.slice(0, 4)">
           <Project :data="project" :flip="!!(i % 2)" />
@@ -32,7 +31,6 @@
     </div>
     <div class="text-center mt-10 mx-4 md:mx-0">
       <h2 class="text-4xl font-bold my-2">Send me a message</h2>
-      <hr class="divider" />
       <ClientOnly fallback-tag="span" fallback="Loading contact form...">
         <Contact />
       </ClientOnly>

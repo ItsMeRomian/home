@@ -11,7 +11,7 @@
   <Body class="triangle" />
   <Menu />
 
-  <div class="flex flex-col h-full mx-14 pt-14 md:pt-0">
+  <div class="flex flex-col mx-14 pt-14 md:pt-0 min-h-[90vh]">
     <div class="container mx-auto max-w-[1024px]" v-if="data && data.name">
       <div
         class="flex flex-col items-center md:flex-row gap-4 mb-12 md:my-12 text-center md:text-left"
@@ -55,7 +55,7 @@
           alt="Project Image"
         />
       </div>
-      <div class="bg-secondary py-4 px-8 rounded-sm my-4">
+      <div class=" py-4 px-8 rounded-sm my-4">
         <p class="">
           <ClientOnly>
             <span v-html="data?.summary" class="inner-story"> </span>
@@ -70,7 +70,9 @@
       <h1 class="text-4xl grow font-bold">404</h1>
       <p>This project does not exist.</p>
     </div>
-    <Footer v-if="data" class="mt-auto" />
+    <div class="mt-auto">
+      <Footer v-if="data" />
+    </div>
   </div>
 </template>
 <script setup lang="ts">

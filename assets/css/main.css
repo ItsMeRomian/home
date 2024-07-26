@@ -1,15 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html {
-  background: #191919f7;
-  color: #f2ecff;
-}
-:root {
-  --primary: #191919;
-  --secondary: #444444;
-  --trimary: #4f5960;
-  --text: #f2ecff;
-  --egg: #f6f0df;
-  --green: #00c896;
+
+html,body, #__nuxt{
+    height: 100%;
 }

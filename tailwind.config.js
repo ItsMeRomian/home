@@ -1,3 +1,4 @@
+import plugin from "tailwindcss/plugin";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -5,27 +6,28 @@ module.exports = {
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
     "./app.vue",
+    "./error.vue",
   ],
   theme: {
-    colors: {
-      primary: "#191919",
-      secondary: "#444444",
-      trimary: "#4F5960",
-      text: "#F2ECFF",
-    },
+    // backgroundColor: {},
     extend: {
       colors: {
-        primary: "#191919",
-        secondary: "#444444",
-        trimary: "#4F5960",
-        text: "#F2ECFF",
-        egg: "#F6F0DF",
-        green: "#00C896",
-        blueaccent: "#00C896",
+        primary: "#fdf0d5",
+        secondary: "#c6ac8f",
+        trimary: "#5e503f",
+        text: "#003049",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addBase, theme }) => {
+      addBase({
+        html: {
+          // color: theme("colors.text"),
+          // backgroundColor: theme("colors.primary"),
+        },
+      });
+    }),
+  ],
 };

@@ -11,9 +11,11 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   gtag: {
     id: 'G-4JY9JNBETR'
   },
+
   gtm: {
     id: "GTM-KZHX6MM3",
     defer: false,
@@ -26,14 +28,17 @@ export default defineNuxtConfig({
     trackOnNextTick: false,
     devtools: true,
   },
+
   css: ["~/assets/css/main.css"],
   modules: ["nuxt-icon", "nuxt-gtag", "@zadigetvoltaire/nuxt-gtm", '@vueuse/nuxt'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   runtimeConfig: {
     public: {
       prod: process.env.prod,
@@ -43,4 +48,6 @@ export default defineNuxtConfig({
     CHECKLY_CHANNEL: process.env.CHECKLY_CHANNEL,
     MESSAGES_CHANNEL: process.env.MESSAGES_CHANNEL,
   },
+
+  compatibilityDate: "2024-07-08",
 });
