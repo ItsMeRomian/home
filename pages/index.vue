@@ -29,12 +29,12 @@
         </template>
       </div>
     </div>
-    <div class="text-center mt-10 mx-4 md:mx-0">
-      <h2 class="text-4xl font-bold my-2">Send me a message</h2>
-      <ClientOnly fallback-tag="span" fallback="Loading contact form...">
-        <Contact />
-      </ClientOnly>
-    </div>
+  </div>
+  <div class="text-center mx-0 md:py-10 py-5 bg-secondary shadow-inner">
+    <h2 class="text-4xl font-bold my-2">Send me a message</h2>
+    <ClientOnly fallback-tag="span" fallback="Loading...">
+      <Contact />
+    </ClientOnly>
   </div>
   <Footer />
 </template>

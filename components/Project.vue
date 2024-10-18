@@ -46,7 +46,11 @@
       }"
       class="z-20 hidden md:block md:group-hover:translate-x-0 md:group-hover:translate-y-0 md:transition-all md:duration-200"
     >
-      <img :src="data.image" class="w-full h-full rounded-lg " :alt="props.data.slug" />
+      <img
+        :src="data.image"
+        class="w-full h-full rounded-lg"
+        :alt="props.data.slug"
+      />
     </div>
   </div>
 </template>

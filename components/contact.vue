@@ -1,13 +1,13 @@
 <template>
   <form
     @submit.prevent="onSubmit()"
-    class="bg-secondary p-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-[980px] mx-auto my-10 rounded-lg"
+    class="md:bg-primary p-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-[980px] mx-auto md:my-10 md:rounded-lg md:shadow-xl"
   >
     <div class="">
       <input
         id="firstName"
         required
-        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/80 focus:bg-trimary/80 focus:outline-none"
+        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 focus:outline-none placeholder-text"
         type="text"
         aria-label="First name"
         placeholder="First Name"
@@ -18,7 +18,7 @@
       <input
         id="lastName"
         required
-        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/80 focus:bg-trimary/80 focus:outline-none"
+        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 focus:outline-none placeholder-text"
         type="text"
         aria-label="Last name"
         placeholder="Last Name"
@@ -29,7 +29,7 @@
       <input
         id="email"
         required
-        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/80 focus:bg-trimary/80 focus:outline-none"
+        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 focus:outline-none placeholder-text"
         type="email"
         aria-label="Last name"
         placeholder="Your Email"
@@ -40,17 +40,17 @@
       <textarea
         id="message"
         required
-        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/80 focus:bg-trimary/80 focus:outline-none min-h-[140px] md:min-h-[200px]"
+        class="w-full p-2 rounded-md bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 focus:outline-none placeholder-text min-h-[140px] md:min-h-[200px]"
         aria-label="With textarea"
         placeholder="Your Message"
         v-model="data.message"
       ></textarea>
     </div>
-    <div class="s place-self-end w-full">
+    <div class="place-self-end w-full translate-y-[-6px]">
       <button
         type="submit"
         id="submit"
-        class="bg-trimary/50 hover:bg-trimary/80 rounded-md w-full px-2 text-2xl font-bold transition-all duration-50 mt-auto"
+        class="bg-trimary/50 hover:bg-trimary/60 rounded-md w-full px-2 text-2xl font-bold transition-all duration-50 mt-auto"
         :class="{ 'py-4': state !== 'LOADING', 'py-2': state == 'LOADING' }"
       >
         <Icon
