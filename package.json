@@ -8,20 +8,20 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.4.1",
-    "@vueuse/core": "^10.9.0",
-    "@vueuse/nuxt": "^10.9.0",
+    "@faker-js/faker": "^9.0.3",
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/nuxt": "^11.1.0",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
-    "autoprefixer": "^10.4.19",
-    "nuxt": "^3.12.4",
-    "nuxt-gtag": "^2.0.5",
+    "autoprefixer": "^10.4.20",
+    "nuxt": "^3.13.2",
+    "nuxt-gtag": "^3.0.1",
     "nuxt-icon": "^0.6.10",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3"
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
   },
   "dependencies": {
-    "discord.js": "^14.14.1",
+    "discord.js": "^14.16.3",
     "vue-recaptcha-v3": "^2.0.1"
   },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  "packageManager": "yarn@1.22.22"
 }
