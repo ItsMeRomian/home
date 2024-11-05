@@ -51,7 +51,7 @@ async function discordMessager(req: Incomming, channelID: string) {
   const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
   const message = new EmbedBuilder()
-    .setTitle("New message from DynaFools.live")
+    .setTitle("New message from tairov.ski")
     .setAuthor({
       name: `${req.firstName} ${req.lastName}`,
       url: `https://someUrl.com/?${req.email}`,

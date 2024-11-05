@@ -1,3 +1,3 @@
-# DynaFools.live
+# tairov.ski
 
 : )
