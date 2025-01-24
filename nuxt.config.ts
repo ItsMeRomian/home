@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    id: 'G-CQQL11BZ3B'
+    id: "G-CQQL11BZ3B",
   },
 
   gtm: {

@@ -25,21 +25,17 @@ export const projects = [
     name: "Lightshot-Server 📸",
     slug: "locallightshotserver",
     date: "April 2024",
-    description:
-      "A local server for lightshot. Made with bun. Imitates the prntscr.com api",
+    description: "A local server for lightshot. Made with bun. Imitates the prntscr.com api",
     stack: ["Bun", "Docker", "Lightshot"],
     read: "/projects/locallightshotserver",
-    features: [
-      "API",
-      "Local"
-    ],
+    features: ["API", "Local"],
     summary:
       "A local server for lightshot. Made with bun (in 50 lines lol). <br> Imitates the http://upload.prntscr.com/upload/ api",
     actions: [
       {
         name: "github",
         link: "https://github.com/itsmeromian/local-lightshot-server",
-      }
+      },
     ],
     image: "imgs/lightshot.jpg",
   },
@@ -47,22 +43,17 @@ export const projects = [
     name: "MCDash 🤖",
     slug: "mcdash",
     date: "Februari 2024",
-    description:
-      "Minecraft server dashboard for managing your server and players.",
+    description: "Minecraft server dashboard for managing your server and players.",
     stack: ["Nuxt3", "NuxtUI", "Postgres", "Docker"],
     read: "/projects/mcdash",
-    features: [
-      "Server Side Rendered (SSR)",
-      "API",
-      "Host alongside the Minecraft server",
-    ],
+    features: ["Server Side Rendered (SSR)", "API", "Host alongside the Minecraft server"],
     summary:
       "A simple Minecraft server dashboard. Using Nuxt3, ServerTap, NuxtUI. Made to be running ON the machine that runs the minecraft server, so the ServerTap port does not have to be exposed. Kinda only looks good on mobile.",
     actions: [
       {
         name: "github",
         link: "https://github.com/itsmeromian/mcdash",
-      }
+      },
     ],
     image: "imgs/mcdash.jpg",
   },
@@ -74,18 +65,14 @@ export const projects = [
       "A URL shortener that allows users to create short links. Allows anyone to check where the link goes and who opened it.",
     stack: ["Nuxt3", "NuxtUI", "Postgres", "Docker"],
     read: "/projects/shortr",
-    features: [
-      "Server Side Rendered (SSR)",
-      "API",
-      "Analytics"
-    ],
+    features: ["Server Side Rendered (SSR)", "API", "Analytics"],
     summary:
       "<p>Welcome to Shortr, a URL shortener that allows you to create short links and track their performance. With Shortr, you can easily shorten long URLs into short, easy-to-share links. You can also track the number of clicks, the location of the users, and the devices they are using to access your links. </p> <p class='uppercase font-bold'>How It Works</p> <p>Shortr is built with Nuxt3, a modern web framework that allows for server-side rendering (SSR) of web pages. This improves the performance and SEO of the website, as well as simplifying the deployment process. The frontend of the website is designed with NuxtUI, a component library that provides pre-designed elements for building user interfaces. The backend of the website is powered by a PostgreSQL database that stores the links and analytics data. Read the Github page to learn how to quickly set this up on your own domain.</p> <p>Thank you for reading :) <br /><br />",
     actions: [
       {
         name: "github",
         link: "https://github.com/itsmeromian/Shortr",
-      }
+      },
     ],
     image: "imgs/Shortr.jpg",
   },
@@ -109,7 +96,7 @@ export const projects = [
       {
         name: "github",
         link: "https://github.com/itsmeromian/JournalistCMS",
-      }
+      },
     ],
     image: "imgs/JournalistCRM.jpg",
   },
@@ -120,11 +107,7 @@ export const projects = [
     description: "The website of a Italian Restaurant located in Emmen",
     stack: ["Nuxt", "Tailwind", "Firebase"],
     read: "/projects/ristorante-lorenzo",
-    features: [
-      "High SEO ranking",
-      "Static site generation",
-      "Easy to use reservation form",
-    ],
+    features: ["High SEO ranking", "Static site generation", "Easy to use reservation form"],
     summary:
       "<p> This is the website of a local italian restaurant located in Emmen. It showcases the menu of the restaurant, the opening hours and contact details. The website also includes a reservation form.</p> <p class='uppercase font-bold'>How It Works</p><p>The website was built using Nuxt 3, a framework for Vue that allows for server-side rendering and static site generation. This improves the performance and SEO of the website, as well as simplifying the deployment process.</p> <p>I also used Tailwind CSS and NuxtUI.</p><p>For the backend, I used Firebase and VercelKV. This allows the owners of the restaurant to change any details on the page using a admin dashboard.</p><p>Before coding the website, I designed it first in Figma, a collaborative design tool that allows to create wireframes, mockups and prototypes. Figma helps to visualize how the website will look like and get feedback from clients and users.</p><p class='uppercase font-bold'>Check it out</p><p> <a href='https://ristorantelorenzo.nl' style='color: #5270e1; text-decoration: underline;'>https://ristorantelorenzo.nl</a> I hope you like it and feel free to contact me if you have any questions or comments about this project.</p>",
     actions: [
@@ -160,14 +143,7 @@ export const projects = [
     date: "September 2020",
     read: "/projects/freeflexr",
     description: "One Place to manage all your freeflexing jobs.",
-    stack: [
-      "Angular 15",
-      "Material",
-      "Firebase",
-      "Hasura",
-      "PostgreSQL",
-      "Heroku",
-    ],
+    stack: ["Angular 15", "Material", "Firebase", "Hasura", "PostgreSQL", "Heroku"],
     features: [
       "Connect your accounts from various freelance platforms",
       "Automatically syncs your data",

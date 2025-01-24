@@ -11,51 +11,44 @@
   <Body class="triangle" />
   <Menu />
 
-  <div class="flex flex-col mx-14 pt-14 md:pt-0 min-h-[90vh]">
+  <div class="mx-14 flex min-h-[90vh] flex-col pt-14 md:pt-0">
     <div class="container mx-auto max-w-[1024px]" v-if="data && data.name">
       <div
-        class="flex flex-col items-center md:flex-row gap-4 mb-12 md:my-12 text-center md:text-left"
+        class="mb-12 flex flex-col items-center gap-4 text-center md:my-12 md:flex-row md:text-left"
       >
-        <h1 class="text-4xl grow font-bold text-wrap">{{ data.name }}</h1>
+        <h1 class="grow text-wrap text-4xl font-bold">{{ data.name }}</h1>
         <div>
           <a
-            class="bg-secondary px-8 py-4 rounded-sm mr-2 hover:bg-primary text-md font-extrabold uppercase inline-flex items-center justify-center flex-row"
+            class="text-md mr-2 inline-flex flex-row items-center justify-center rounded-sm bg-secondary px-8 py-4 font-extrabold uppercase hover:bg-primary"
             v-for="item in data?.actions"
             :key="item.name"
             :href="item.link"
             target="_BLANK"
           >
             {{ item.name }}
-            <Icon
-              name="ic:sharp-arrow-forward-ios"
-              class="hover:text-blueaccent"
-            />
+            <Icon name="ic:sharp-arrow-forward-ios" class="hover:text-blueaccent" />
           </a>
         </div>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <span class="p-4 rounded-sm">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <span class="rounded-sm p-4">
           <b class="uppercase">Idea</b>
           <br />
-          <hr class="my-2 border-blueaccent" />
+          <hr class="border-blueaccent my-2" />
           {{ data?.description }}
           <br />
           <br />
           <b class="uppercase">Technology</b><br />
-          <hr class="my-2 border-blueaccent" />
+          <hr class="border-blueaccent my-2" />
           <ul>
             <li v-for="item of data?.stack">
               {{ item }}
             </li>
           </ul>
         </span>
-        <img
-          :src="'/' + data?.image"
-          class="w-full rounded-sm"
-          alt="Project Image"
-        />
+        <img :src="'/' + data?.image" class="w-full rounded-sm" alt="Project Image" />
       </div>
-      <div class=" py-4 px-8 rounded-sm my-4">
+      <div class="my-4 rounded-sm px-8 py-4">
         <p class="">
           <ClientOnly>
             <span v-html="data?.summary" class="inner-story"> </span>
@@ -63,11 +56,8 @@
         </p>
       </div>
     </div>
-    <div
-      v-else
-      class="container mx-auto max-w-[1024px] p-4 rounded-sm bg-secondary text-center"
-    >
-      <h1 class="text-4xl grow font-bold">404</h1>
+    <div v-else class="container mx-auto max-w-[1024px] rounded-sm bg-secondary p-4 text-center">
+      <h1 class="grow text-4xl font-bold">404</h1>
       <p>This project does not exist.</p>
     </div>
     <div class="mt-auto">
@@ -76,21 +66,21 @@
   </div>
 </template>
 <script setup lang="ts">
-const { data } = await useFetch(`/api/project/${useRoute().params.id}`);
+  const { data } = await useFetch(`/api/project/${useRoute().params.id}`);
 </script>
 <style>
-body.triangle {
-  background: url("/imgs/download.svg");
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: contain;
-}
-@media (max-width: 768px) {
   body.triangle {
-    background-size: 70%;
+    background: url("/imgs/download.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
   }
-}
-.inner-story > p {
-  margin-bottom: 0.5rem;
-}
+  @media (max-width: 768px) {
+    body.triangle {
+      background-size: 70%;
+    }
+  }
+  .inner-story > p {
+    margin-bottom: 0.5rem;
+  }
 </style>

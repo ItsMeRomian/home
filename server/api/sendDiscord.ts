@@ -1,9 +1,4 @@
-import {
-  Client,
-  TextChannel,
-  EmbedBuilder,
-  GatewayIntentBits,
-} from "discord.js";
+import { Client, EmbedBuilder, GatewayIntentBits, TextChannel } from "discord.js";
 
 interface Incomming {
   firstName: string;
@@ -16,10 +11,7 @@ interface Incomming {
 export default defineEventHandler(async (event) => {
   const data = await readBody<Incomming>(event);
 
-  const tokenOk = await checkToken(
-    data.token,
-    useRuntimeConfig().google_captcha_private
-  );
+  const tokenOk = await checkToken(data.token, useRuntimeConfig().google_captcha_private);
   if (!tokenOk) {
     setResponseStatus(event, 400);
     return { m: "Invalid token" };
