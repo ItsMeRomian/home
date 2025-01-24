@@ -3,8 +3,8 @@
     class="text-xl font-bold py-3 px-4 rounded-md cursor-pointer shadow-xl transition-all duration-50"
     :class="
       props.light
-        ? 'bg-trimary/50 hover:bg-trimary/80'
-        : 'bg-secondary  hover:bg-secondary/50'
+        ? 'bg-button hover:bg-button/50'
+        : 'bg-button  hover:bg-button/50'
     "
     @click="() => props.action && props.action()"
   >

@@ -12,18 +12,16 @@
     />
   </Head>
   <Top />
-  <div class="container mx-auto my-10 max-w-[1024px]">
-    <div class="projects text-center mx-4 lg:mx-0">
-      <h2 class="text-4xl font-extrabold mb-20" id="projects">Projects</h2>
+  <div class="container mx-auto max-w-[1444px]">
+    <div class="projects text-center mb-20 lg:mx-0 mx-1">
+      <h2 class="text-4xl font-extrabold mb-10" id="projects">Projects</h2>
       <div v-if="projects">
         <template v-for="(project, i) in projects.slice(0, 4)">
           <Project :data="project" :flip="!!(i % 2)" />
         </template>
-        <ButtonComp
-          :action="() => (more = true)"
-          title="More"
-          v-if="!more"
-        ></ButtonComp>
+        <div :class="{ 'mt-10': !more }">
+          <ButtonComp :action="() => (more = true)" title="More" v-if="!more" />
+        </div>
         <template v-if="more" v-for="(project, i) in projects.slice(4)">
           <Project :data="project" :flip="!!(i % 2)" />
         </template>
