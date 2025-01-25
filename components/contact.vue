@@ -1,70 +1,41 @@
 <template>
-  <form
-    @submit.prevent="onSubmit()"
-    class="mx-auto grid max-w-[980px] grid-cols-1 gap-4 p-10 md:my-10 md:grid-cols-2 md:gap-5 md:rounded-lg md:bg-primary md:shadow-xl"
-  >
-    <div class="">
-      <input
-        id="firstName"
-        required
-        class="bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 placeholder-text w-full rounded-md p-2 focus:outline-none"
-        type="text"
-        aria-label="First name"
-        placeholder="First Name"
-        v-model="data.firstName"
-      />
-    </div>
-    <div>
-      <input
-        id="lastName"
-        required
-        class="bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 placeholder-text w-full rounded-md p-2 focus:outline-none"
-        type="text"
-        aria-label="Last name"
-        placeholder="Last Name"
-        v-model="data.lastName"
-      />
-    </div>
-    <div>
-      <input
-        id="email"
-        required
-        class="bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 placeholder-text w-full rounded-md p-2 focus:outline-none"
-        type="email"
-        aria-label="Last name"
-        placeholder="Your Email"
-        v-model="data.email"
-      />
-    </div>
-    <div class="row-span-2">
-      <textarea
-        id="message"
-        required
-        class="bg-trimary/50 hover:bg-trimary/60 focus:bg-trimary/60 placeholder-text min-h-[140px] w-full rounded-md p-2 focus:outline-none md:min-h-[200px]"
-        aria-label="With textarea"
-        placeholder="Your Message"
-        v-model="data.message"
-      ></textarea>
-    </div>
-    <div class="w-full translate-y-[-6px] place-self-end">
-      <button
-        type="submit"
-        id="submit"
-        class="bg-trimary/50 hover:bg-trimary/60 duration-50 mt-auto w-full rounded-md px-2 text-2xl font-bold transition-all"
-        :class="{ 'py-4': state !== 'LOADING', 'py-2': state == 'LOADING' }"
-      >
-        <Icon class="h-12 w-12" name="eos-icons:three-dots-loading" v-if="state === 'LOADING'" />
-        <span v-if="state === 'FAILED'">
-          Failed
-          <Icon name="material-symbols:cancel" />
-        </span>
-        <span v-if="state === 'READY'">Send</span>
-        <span v-if="state === 'SUCCESS'">
-          Sent
-          <Icon name="material-symbols:check-circle" />
-        </span>
-      </button>
-    </div>
+  <form @submit.prevent="onSubmit()">
+    <UiCard class="border-none">
+      <template #content>
+        <UiCardContent class="relative mx-auto flex max-w-screen-sm flex-col gap-3">
+          <icon
+            name="uil:check"
+            class="absolute left-1/2 top-1/2 z-10 mx-auto -translate-y-[50%] translate-x-[-50%] text-8xl"
+            v-if="state === 'Sent!'"
+          />
+          <div class="flex flex-col gap-2" v-for="field in fields">
+            <UiLabel :for="field.name" :class="{ 'opacity-50': state !== 'Send' }">{{
+              field.placeholder
+            }}</UiLabel>
+            <UiInput
+              v-if="field.fieldType === 'input'"
+              :disabled="state !== 'Send'"
+              :id="field.name"
+              required
+              :type="field.type"
+              :aria-label="field.name"
+              v-model="data[field.name as keyof typeof data]"
+            />
+            <UiTextarea
+              :disabled="state !== 'Send'"
+              v-else-if="field.fieldType === 'textarea'"
+              :id="field.name"
+              required
+              :aria-label="field.name"
+              v-model="data.message"
+            />
+          </div>
+          <UiButton type="submit" id="submit" :disabled="state !== 'Send'">
+            {{ state }}
+          </UiButton>
+        </UiCardContent>
+      </template>
+    </UiCard>
   </form>
 </template>
 
@@ -76,9 +47,12 @@
   const enviroment = useRuntimeConfig();
   const { gtag } = useGtag();
 
-  const state = ref<"READY" | "SUCCESS" | "FAILED" | "LOADING">("READY");
-  const data =
-    enviroment.public.prod === "true"
+  const state = ref<"Send" | "Sent!" | ":(" | "Sending...">("Send");
+
+  const noFake = false;
+
+  const data = ref(
+    enviroment.public.prod === "true" || noFake
       ? ref({
           firstName: "",
           lastName: "",
@@ -87,11 +61,35 @@
         })
       : ref({
           firstName: faker.person.firstName(),
-          lastName: faker.person.lastName(),
           email: faker.internet.email(),
           message: faker.lorem.paragraph(),
-        });
+        })
+  );
   let recaptchaInstance: IReCaptchaComposition;
+
+  const fields = ref([
+    {
+      name: "firstName",
+      type: "text",
+      fieldType: "input",
+      placeholder: "Naam",
+      required: true,
+    },
+    {
+      name: "email",
+      type: "email",
+      fieldType: "input",
+      placeholder: "Email",
+      required: true,
+    },
+    {
+      name: "message",
+      type: "textarea",
+      fieldType: "textarea",
+      placeholder: "Message",
+      required: true,
+    },
+  ]);
 
   onMounted(() => {
     const { vueApp } = useNuxtApp();
@@ -109,27 +107,27 @@
   };
 
   const onSubmit = async () => {
-    state.value = "LOADING";
+    state.value = "Sending...";
     try {
       const { data: res } = await useFetch("/api/sendDiscord", {
         method: "POST",
         body: {
           firstName: data.value.firstName,
-          lastName: data.value.lastName,
+          lastName: "",
           message: data.value.message,
           email: data.value.email,
           token: await getToken(),
         },
       });
       if ((res.value && res.value.m) === "OK") {
-        state.value = "SUCCESS";
+        state.value = "Sent!";
         gtag("event", "send_form_1");
       } else {
-        state.value = "FAILED";
+        state.value = ":(";
       }
       console.log(res.value);
     } catch (error) {
-      state.value = "FAILED";
+      state.value = ":(";
       console.log("sendMessage error:", error);
     }
   };

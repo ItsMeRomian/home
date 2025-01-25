@@ -8,26 +8,20 @@
     <Meta name="twitter:image" :content="data.image" />
     <Meta name="og:image" :content="data.image" />
   </Head>
-  <Body class="triangle" />
+  <Body />
   <Menu />
 
-  <div class="mx-14 flex min-h-[90vh] flex-col pt-14 md:pt-0">
+  <div>
     <div class="container mx-auto max-w-[1024px]" v-if="data && data.name">
       <div
         class="mb-12 flex flex-col items-center gap-4 text-center md:my-12 md:flex-row md:text-left"
       >
         <h1 class="grow text-wrap text-4xl font-bold">{{ data.name }}</h1>
         <div>
-          <a
-            class="text-md mr-2 inline-flex flex-row items-center justify-center rounded-sm bg-secondary px-8 py-4 font-extrabold uppercase hover:bg-primary"
-            v-for="item in data?.actions"
-            :key="item.name"
-            :href="item.link"
-            target="_BLANK"
-          >
-            {{ item.name }}
+          <UiButton v-for="item in data?.actions" :key="item.name" :to="item.link" target="_BLANK">
+            {{ item.name.charAt(0).toUpperCase() + item.name.slice(1) }}
             <Icon name="ic:sharp-arrow-forward-ios" class="hover:text-blueaccent" />
-          </a>
+          </UiButton>
         </div>
       </div>
       <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">

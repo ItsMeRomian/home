@@ -14,6 +14,7 @@ export interface Project {
   actions?: {
     name: string;
     link: string;
+    icon?: string;
   }[];
   image?: string;
   name?: string;
@@ -25,7 +26,7 @@ export const projects = [
     name: "Lightshot-Server 📸",
     slug: "locallightshotserver",
     date: "April 2024",
-    description: "A local server for lightshot. Made with bun. Imitates the prntscr.com api",
+    description: "A local server for the screenshot server lightshot. Allows you to make screenshots and upload them to your own file sharing platform. Made with bun. Basicly imitates the prntscr.com api.",
     stack: ["Bun", "Docker", "Lightshot"],
     read: "/projects/locallightshotserver",
     features: ["API", "Local"],
@@ -33,7 +34,8 @@ export const projects = [
       "A local server for lightshot. Made with bun (in 50 lines lol). <br> Imitates the http://upload.prntscr.com/upload/ api",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/itsmeromian/local-lightshot-server",
       },
     ],
@@ -51,7 +53,8 @@ export const projects = [
       "A simple Minecraft server dashboard. Using Nuxt3, ServerTap, NuxtUI. Made to be running ON the machine that runs the minecraft server, so the ServerTap port does not have to be exposed. Kinda only looks good on mobile.",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/itsmeromian/mcdash",
       },
     ],
@@ -70,7 +73,8 @@ export const projects = [
       "<p>Welcome to Shortr, a URL shortener that allows you to create short links and track their performance. With Shortr, you can easily shorten long URLs into short, easy-to-share links. You can also track the number of clicks, the location of the users, and the devices they are using to access your links. </p> <p class='uppercase font-bold'>How It Works</p> <p>Shortr is built with Nuxt3, a modern web framework that allows for server-side rendering (SSR) of web pages. This improves the performance and SEO of the website, as well as simplifying the deployment process. The frontend of the website is designed with NuxtUI, a component library that provides pre-designed elements for building user interfaces. The backend of the website is powered by a PostgreSQL database that stores the links and analytics data. Read the Github page to learn how to quickly set this up on your own domain.</p> <p>Thank you for reading :) <br /><br />",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/itsmeromian/Shortr",
       },
     ],
@@ -94,7 +98,8 @@ export const projects = [
       "<p>Welcome to the website of a journalist who writes about various topics and shares her insights with her readers. </p> <p class='uppercase font-bold'>How It Works</p> <p>This website is powered by Nuxt3, a framework that allows for server-side rendering (SSR) of web pages. This means that the pages are pre-rendered on the server and sent to the browser as HTML, which improves the performance, accessibility, and SEO of the website.</p> <p>The content of the website is stored in Firebase, a cloud platform that provides authentication, database, and storage services. Firebase Authentication handles the login and registration of users, Firebase Realtime Database stores the articles written by Annemiek, and Firebase Storage hosts the images and other media files.</p> <p>The website is deployed on Vercel, a cloud platform that specializes in hosting static and JAMstack websites. Vercel offers fast and reliable hosting, automatic SSL certificates, and continuous integration and delivery (CI/CD) workflows. This ensures that the website is always online and updated with the latest content.</p> <p class='uppercase font-bold'>Why It Matters</p> <p>This website is more than just a showcase of Annemiek\'s work. It is also a way for her to connect with her audience and share her opinions and perspectives on various issues. I've created a website that is easy to manage, update, and access for both Annemiek and her readers.</p> <p>If you are interested in creating a similar website for your own content, or if you have any questions or feedback, please feel free to contact me. I   would love to hear from you and help you with your web development needs. Thank you for reading! <br /><br /> <p>Here are some screenshots from the admin page:</p><img src='/imgs/journalistcrm-admin1.jpg'/><br/><img src='/imgs/journalistcrm-admin2.jpg'/>",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/itsmeromian/JournalistCMS",
       },
     ],
@@ -113,6 +118,7 @@ export const projects = [
     actions: [
       {
         name: "Visit",
+        icon: "web",
         link: "https://ristorantelorenzo.nl/",
       },
     ],
@@ -131,6 +137,7 @@ export const projects = [
     actions: [
       {
         name: "Visit",
+        icon: "web",
         link: "https://tiptopibiza.com/",
       },
     ],
@@ -155,7 +162,8 @@ export const projects = [
       "<p>Hello everyone,</p> <p>I'm excited to share with you a project that I've been working on for the past few months: FreeFlexr.</p> <p>FreeFlexr is a tool for freelancers who want to keep track of their jobs and income across different platforms. As a freelancer myself, I know how hard it can be to manage multiple gigs from different apps, such as Youngones, Temper, Jobner and others. Working with a spreadsheet is outdated and can be a headache.</p> <p>That's why I created FreeFlexr: an online tool that lets you connect your accounts from various freelance platforms and automatically syncs your data. You can see all your jobs in one dashboard, filter them by date, status, client or platform. You can also generate reports and invoices with just a few clicks. And the best part is: FreeFlexr is completely free to use!</p> <p>FreeFlexr is built with modern web technologies that ensure a fast and responsive user interface. The frontend is coded in Angular 14 and Material Design components. The backend is powered by Hasura GraphQL engine that connects to a PostgreSQL database hosted on Heroku. The app also uses Firebase for authentication and storage.</p> <p>You can follow the development here: https://github.com/itsmeromian/freeflexr</p> <p>I hope you find it useful and I'd love to hear your feedback and suggestions.</p> <p>Thanks for reading!</p>",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/itsmeromian/freeflexr",
       },
     ],
@@ -172,7 +180,8 @@ export const projects = [
     summary: "",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/itsmeromian/JumboRadio",
       },
     ],
@@ -189,7 +198,8 @@ export const projects = [
     description: "a bootstrap theme for BrainCMS.",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/ItsMeRomian/DynaHotel",
       },
     ],
@@ -206,7 +216,8 @@ export const projects = [
     description: "An allround admin environment for habbo retro's owners.",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/ItsMeRomian/ModTools",
       },
     ],
@@ -223,11 +234,13 @@ export const projects = [
     description: "A webdesign company ran with friends.",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/ItsMeRomian/FriendlyTapirs",
       },
       {
         name: "Website",
+        icon: "web",
         link: "https://friendlytapirs.com",
       },
     ],
@@ -244,11 +257,13 @@ export const projects = [
     description: "A place to paste code snippets or text.",
     actions: [
       {
-        name: "github",
+        icon: "github",
+        name: "Github",
         link: "https://github.com/ItsMeRomian/Pasta",
       },
       {
         name: "Website",
+        icon: "web",
         link: "https://pasta.dyna.host",
       },
     ],
