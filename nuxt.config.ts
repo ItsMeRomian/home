@@ -30,7 +30,17 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/css/main.css"],
-  modules: ["nuxt-icon", "nuxt-gtag", "@zadigetvoltaire/nuxt-gtm", '@vueuse/nuxt'],
+
+  modules: [
+    "nuxt-icon",
+    "nuxt-gtag",
+    "@zadigetvoltaire/nuxt-gtm",
+    "@vueuse/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+    "@nuxt/fonts",
+    "@vee-validate/nuxt"
+  ],
 
   postcss: {
     plugins: {
@@ -50,4 +60,27 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: "2024-07-08",
+
+  tailwindcss: {
+    exposeConfig: true,
+    editorSupport: true,
+  },
+
+  colorMode: {
+    classSuffix: "",
+  },
+
+  imports: {
+    imports: [
+      {
+        from: "tailwind-variants",
+        name: "tv",
+      },
+      {
+        from: "tailwind-variants",
+        name: "VariantProps",
+        type: true,
+      },
+    ],
+  },
 });
