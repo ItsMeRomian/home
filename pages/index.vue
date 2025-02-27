@@ -23,6 +23,7 @@
         />
         <template v-if="more" v-for="project in projects.slice(4)">
           <Project :data="project" />
+          <UiDivider class="mx-auto my-0 w-3/4" />
         </template>
       </div>
     </div>
