@@ -5,10 +5,14 @@
         <UiCardContent class="relative mx-auto flex max-w-screen-sm flex-col gap-3">
           <icon
             name="uil:check"
-            class="absolute left-1/2 top-1/2 z-10 mx-auto -translate-y-[50%] translate-x-[-50%] text-8xl"
+            class="absolute left-1/2 top-[20%] z-10 mx-auto -translate-y-[50%] translate-x-[-50%] text-8xl transition-all duration-300 ease-in"
             v-if="state === 'Sent!'"
           />
-          <div class="flex flex-col gap-2" v-for="field in fields">
+          <div
+            class="flex flex-col gap-2 transition-all duration-300 ease-in"
+            v-for="field in fields"
+            :class="{ 'blur-sm': state === 'Sent!' }"
+          >
             <UiLabel :for="field.name" :class="{ 'opacity-50': state !== 'Send' }">{{
               field.placeholder
             }}</UiLabel>
