@@ -23,6 +23,50 @@ export interface Project {
 
 export const projects = [
   {
+    name: "Findalyse 🔍",
+    slug: "findalyse",
+    date: "Februari 2026",
+    description:
+      "Not recommended in ChatGPT, Gemini, or Google AI? Findalyse finds out why, and tells you exactly how to fix it.",
+    stack: ["Nuxt3", "Tailwind", "Postgres", "Docker"],
+    read: "/projects/findalyse",
+    features: [
+      "AI Visibility Score",
+      "Deep checks",
+      "Sector-tailored diagnostics",
+      "Branded PDF reports",
+    ],
+    summary:
+      "<p>AI is becoming the front door to every business. When someone asks ChatGPT for a recommendation, you're either in the answer, or you don't exist.</p><p class='uppercase font-bold'>How Findalyse works</p><p><strong>Scan</strong> — Enter any domain. Findalyse crawls the site and runs deep checks across entity data, content quality, trust signals, AI presence, and technical health. Pick a sector: a restaurant gets different checks than a law firm.</p><p><strong>Diagnose</strong> — See exactly what's hurting visibility — specific issues with specific fixes, not vague scores. Broken schema, missing FAQ pages, weak entity signals, content gaps AI can't parse. Every action has a severity, impact rating, and clear explanation.</p><p><strong>Fix &amp; track</strong> — Follow the action plan. Rescan. Watch the score move. Generate branded PDF reports to share with stakeholders: your logo, your colors, scheduled automatically.</p><p class='uppercase font-bold'>Track vs Fix</p><p>Competitor tools tell you IF AI mentions you. Findalyse tells you WHY it doesn't, and gives you the exact action plan to change that.</p>",
+    actions: [
+      {
+        name: "Visit",
+        icon: "web",
+        link: "https://findalyse.com",
+      },
+    ],
+    image: "imgs/findalyse.png",
+  },
+  {
+    name: "Fail2Ban-Cloudflare-NginxProxyManager 🚫",
+    slug: "fail2ban-cloudflare-nginxproxymanager",
+    date: "Januari 2026",
+    description: "Scripts / Tutorial on how to set up Fail2Ban on a machine running Nginx Proxy Manager that is behind Cloudflare.",
+    stack: ["Docker", "Nginx Proxy Manager", "Fail2Ban", "Cloudflare"],
+    read: "/projects/fail2ban-cloudflare-nginxproxymanager",
+    features: ["Tutorial", "Scripts"],
+    summary:
+      "Scripts / Tutorial on how to set up Fail2Ban on a machine running Nginx Proxy Manager that is behind Cloudflare.",
+    actions: [
+      {
+        icon: "github",
+        name: "Github",
+        link: "https://github.com/itsmeromian/fail2ban-cloudflare-nginxproxymanager",
+      },
+    ],
+    image: "imgs/fail2ban.png",
+  },
+  {
     name: "Lightshot-Server 📸",
     slug: "locallightshotserver",
     date: "April 2024",
@@ -61,6 +105,43 @@ export const projects = [
     image: "imgs/mcdash.jpg",
   },
   {
+    name: "Ristorante Lorenzo 🍕",
+    slug: "ristorante-lorenzo",
+    date: "October 2021",
+    description: "The website of a Italian Restaurant located in Emmen",
+    stack: ["Nuxt", "Tailwind", "Firebase"],
+    read: "/projects/ristorante-lorenzo",
+    features: ["High SEO ranking", "Static site generation", "Easy to use reservation form"],
+    summary:
+      "<p> This is the website of a local italian restaurant located in Emmen. It showcases the menu of the restaurant, the opening hours and contact details. The website also includes a reservation form.</p> <p class='uppercase font-bold'>How It Works</p><p>The website was built using Nuxt 3, a framework for Vue that allows for server-side rendering and static site generation. This improves the performance and SEO of the website, as well as simplifying the deployment process.</p> <p>I also used Tailwind CSS and NuxtUI.</p><p>For the backend, I used Firebase and VercelKV. This allows the owners of the restaurant to change any details on the page using a admin dashboard.</p><p>Before coding the website, I designed it first in Figma, a collaborative design tool that allows to create wireframes, mockups and prototypes. Figma helps to visualize how the website will look like and get feedback from clients and users.</p><p class='uppercase font-bold'>Check it out</p><p> <a href='https://ristorantelorenzo.nl' style='color: #5270e1; text-decoration: underline;'>https://ristorantelorenzo.nl</a> I hope you like it and feel free to contact me if you have any questions or comments about this project.</p>",
+    actions: [
+      {
+        name: "Visit",
+        icon: "web",
+        link: "https://ristorantelorenzo.nl/",
+      },
+    ],
+    image: "imgs/RistoranteLorenzo.jpg",
+  },
+  {
+    name: "WebsiteDigitaal 💻",
+    slug: "websitedigitaal",
+    read: "/projects/websitedigitaal",
+    date: "April 2019",
+    stack: ["Wordpress", "PHP", "Timber"],
+    features: [""],
+    summary: "",
+    description: "A webdesign company ran with friends.",
+    actions: [
+      {
+        name: "Website",
+        icon: "web",
+        link: "https://websitedigitaal.nl",
+      },
+    ],
+    image: "imgs/FriendlyTapirs.jpg",
+  },
+  {
     name: "Shortr 🚀",
     slug: "shortr",
     date: "April 2024",
@@ -95,7 +176,7 @@ export const projects = [
       "Easy image, file and audio uploading",
     ],
     summary:
-      "<p>Welcome to the website of a journalist who writes about various topics and shares her insights with her readers. </p> <p class='uppercase font-bold'>How It Works</p> <p>This website is powered by Nuxt3, a framework that allows for server-side rendering (SSR) of web pages. This means that the pages are pre-rendered on the server and sent to the browser as HTML, which improves the performance, accessibility, and SEO of the website.</p> <p>The content of the website is stored in Firebase, a cloud platform that provides authentication, database, and storage services. Firebase Authentication handles the login and registration of users, Firebase Realtime Database stores the articles written by Annemiek, and Firebase Storage hosts the images and other media files.</p> <p>The website is deployed on Vercel, a cloud platform that specializes in hosting static and JAMstack websites. Vercel offers fast and reliable hosting, automatic SSL certificates, and continuous integration and delivery (CI/CD) workflows. This ensures that the website is always online and updated with the latest content.</p> <p class='uppercase font-bold'>Why It Matters</p> <p>This website is more than just a showcase of Annemiek\'s work. It is also a way for her to connect with her audience and share her opinions and perspectives on various issues. I've created a website that is easy to manage, update, and access for both Annemiek and her readers.</p> <p>If you are interested in creating a similar website for your own content, or if you have any questions or feedback, please feel free to contact me. I   would love to hear from you and help you with your web development needs. Thank you for reading! <br /><br /> <p>Here are some screenshots from the admin page:</p><img src='/imgs/journalistcrm-admin1.jpg'/><br/><img src='/imgs/journalistcrm-admin2.jpg'/>",
+      "",
     actions: [
       {
         icon: "github",
@@ -105,35 +186,17 @@ export const projects = [
     ],
     image: "imgs/JournalistCRM.jpg",
   },
-  {
-    name: "Ristorante Lorenzo 🍕",
-    slug: "ristorante-lorenzo",
-    date: "October 2021",
-    description: "The website of a Italian Restaurant located in Emmen",
-    stack: ["Nuxt", "Tailwind", "Firebase"],
-    read: "/projects/ristorante-lorenzo",
-    features: ["High SEO ranking", "Static site generation", "Easy to use reservation form"],
-    summary:
-      "<p> This is the website of a local italian restaurant located in Emmen. It showcases the menu of the restaurant, the opening hours and contact details. The website also includes a reservation form.</p> <p class='uppercase font-bold'>How It Works</p><p>The website was built using Nuxt 3, a framework for Vue that allows for server-side rendering and static site generation. This improves the performance and SEO of the website, as well as simplifying the deployment process.</p> <p>I also used Tailwind CSS and NuxtUI.</p><p>For the backend, I used Firebase and VercelKV. This allows the owners of the restaurant to change any details on the page using a admin dashboard.</p><p>Before coding the website, I designed it first in Figma, a collaborative design tool that allows to create wireframes, mockups and prototypes. Figma helps to visualize how the website will look like and get feedback from clients and users.</p><p class='uppercase font-bold'>Check it out</p><p> <a href='https://ristorantelorenzo.nl' style='color: #5270e1; text-decoration: underline;'>https://ristorantelorenzo.nl</a> I hope you like it and feel free to contact me if you have any questions or comments about this project.</p>",
-    actions: [
-      {
-        name: "Visit",
-        icon: "web",
-        link: "https://ristorantelorenzo.nl/",
-      },
-    ],
-    image: "imgs/RistoranteLorenzo.jpg",
-  },
+
   {
     name: "TipTopIbiza 🏠",
     slug: "tiptopibiza",
     date: "Januari 2020",
     read: "/projects/tiptopibiza",
     description: "Website of a Spanish property management company.",
-    stack: ["Nuxt", "Bootstrap", "Hostgator"],
+    stack: ["Nuxt", "Bootstrap"],
     features: ["High SEO ranking", "Static site generation"],
     summary:
-      "<p>I'm excited to share with you my latest project: a website for a home management company located in Ibiza, Spain. The company offers various services for homeowners and renters in the island, such as cleaning, maintenance, security and concierge. The website showcases these services in a clear and attractive way, with icons, images and descriptions. It also has some testimonials from satisfied customers who have used the company's services before. And of course, it has a contact form where potential clients can get in touch with the company and request a quote.</p> <p>The website is built with Vue 3, Typescript and bootstrap. Vue 3 is a modern and powerful framework for creating reactive and dynamic web applications. Bootstrap is a popular CSS framework that provides responsive and consistent design elements. I chose these technologies because they are fast, reliable and easy to work with. The website is also optimized for performance and accessibility. It uses lazy loading to reduce the initial loading time and improve the user experience. The website is fully responsive and adapts to different screen sizes and devices. </p> <p>I'm very proud of how the website turned out and I hope you like it too. You can check it out here: https://tiptopibiza.com/.</p>",
+      "",
     actions: [
       {
         name: "Visit",
@@ -144,31 +207,7 @@ export const projects = [
     image: "imgs/TipTopIbiza.jpg",
   },
 
-  {
-    name: "FreeFlexr 💪",
-    slug: "freeflexr",
-    date: "September 2020",
-    read: "/projects/freeflexr",
-    description: "One Place to manage all your freeflexing jobs.",
-    stack: ["Angular 15", "Material", "Firebase", "Hasura", "PostgreSQL", "Heroku"],
-    features: [
-      "Connect your accounts from various freelance platforms",
-      "Automatically syncs your data",
-      "See all your jobs in one dashboard",
-      "Filter jobs by date, status, client or platform",
-      "Generate reports and invoices with just a few clicks",
-    ],
-    summary:
-      "<p>Hello everyone,</p> <p>I'm excited to share with you a project that I've been working on for the past few months: FreeFlexr.</p> <p>FreeFlexr is a tool for freelancers who want to keep track of their jobs and income across different platforms. As a freelancer myself, I know how hard it can be to manage multiple gigs from different apps, such as Youngones, Temper, Jobner and others. Working with a spreadsheet is outdated and can be a headache.</p> <p>That's why I created FreeFlexr: an online tool that lets you connect your accounts from various freelance platforms and automatically syncs your data. You can see all your jobs in one dashboard, filter them by date, status, client or platform. You can also generate reports and invoices with just a few clicks. And the best part is: FreeFlexr is completely free to use!</p> <p>FreeFlexr is built with modern web technologies that ensure a fast and responsive user interface. The frontend is coded in Angular 14 and Material Design components. The backend is powered by Hasura GraphQL engine that connects to a PostgreSQL database hosted on Heroku. The app also uses Firebase for authentication and storage.</p> <p>You can follow the development here: https://github.com/itsmeromian/freeflexr</p> <p>I hope you find it useful and I'd love to hear your feedback and suggestions.</p> <p>Thanks for reading!</p>",
-    actions: [
-      {
-        icon: "github",
-        name: "Github",
-        link: "https://github.com/itsmeromian/freeflexr",
-      },
-    ],
-    image: "imgs/FreeFlexr.jpg",
-  },
+
   {
     name: "Supermarket_Radio 📻",
     slug: "jumboradio",
@@ -222,24 +261,6 @@ export const projects = [
       },
     ],
     image: "imgs/ModTools.jpg",
-  },
-  {
-    name: "WebsiteDigitaal 💻",
-    slug: "websitedigitaal",
-    read: "/projects/websitedigitaal",
-    date: "April 2019",
-    stack: ["Wordpress", "PHP", "Timber"],
-    features: [""],
-    summary: "",
-    description: "A webdesign company ran with friends.",
-    actions: [
-      {
-        name: "Website",
-        icon: "web",
-        link: "https://websitedigitaal.nl",
-      },
-    ],
-    image: "imgs/FriendlyTapirs.jpg",
   },
   {
     name: "Pasta 🍝",

@@ -15,6 +15,7 @@
           <UiDivider class="mx-auto my-0 w-3/4" />
         </template>
         <UiButton
+          data-umami-event="More Projects Click"
           @click="() => (more = true)"
           text="More"
           v-if="!more"

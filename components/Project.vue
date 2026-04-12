@@ -1,12 +1,12 @@
 <template>
   <UiCard class="border-none" v-if="data.name">
     <template #content>
-      <UiCardContent @click="() => router.push(data.read)">
+      <UiCardContent @click="doOpen(data.read)">
         <div class="flex flex-col gap-5 md:flex-row">
           <div class="shrink-0">
             <img
               class="aspect-video cursor-pointer rounded-lg object-cover shadow md:h-[250px]"
-              :src="data.image"
+              :src="data.image || '#'"
               :alt="props.data.slug"
             />
           </div>
@@ -31,9 +31,12 @@
 </template>
 
 <script setup lang="ts">
-  import { useRouter } from "vue-router";
   import type { Project } from "~/server/api/project/[id]";
 
-  const router = useRouter();
   const props = defineProps<{ data: Project }>();
+
+  const doOpen = (link: string) => {
+    window.umami?.track("Project Click", { project: props.data.slug });
+    useRouter().push(link);
+  };
 </script>

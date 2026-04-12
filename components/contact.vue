@@ -113,6 +113,10 @@
   const onSubmit = async () => {
     state.value = "Sending...";
     try {
+      window.umami?.track("Contact Form Submit", {
+        firstName: data.value.firstName,
+        email: data.value.email,
+      });
       const { data: res } = await useFetch("/api/sendDiscord", {
         method: "POST",
         body: {
@@ -131,6 +135,11 @@
       }
       console.log(res.value);
     } catch (error) {
+      window.umami?.track("Contact Form Error", {
+        firstName: data.value.firstName,
+        email: data.value.email,
+        error: error instanceof Error ? error.message : String(error),
+      });
       state.value = ":(";
       console.log("sendMessage error:", error);
     }

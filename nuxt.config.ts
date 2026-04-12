@@ -7,8 +7,16 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/x-icon",
           href: "/logo.png",
-        },
+        }
       ],
+      script: [
+        // <script defer src="https://umami.dyna.host/script.js" data-website-id="25da6b79-b509-4de3-b598-cea68d99e826"></script>
+        {
+          src: "https://umami.dyna.host/script.js",
+          "data-website-id": "25da6b79-b509-4de3-b598-cea68d99e826",
+          defer: true,
+        }
+      ]
     },
   },
 

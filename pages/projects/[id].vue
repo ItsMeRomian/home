@@ -18,10 +18,18 @@
       >
         <h1 class="grow text-wrap text-4xl font-bold">{{ data.name }}</h1>
         <div>
-          <UiButton v-for="item in data?.actions" :key="item.name" :to="item.link" target="_BLANK">
+          <NuxtLink
+            v-for="item in data?.actions"
+            :key="item.name"
+            :to="item.link"
+            target="_blank"
+            data-umami-event="Project Action Click"
+            :data-umami-event-value="item.name"
+            :data-umami-event-project="data.slug"
+          >
             {{ item.name.charAt(0).toUpperCase() + item.name.slice(1) }}
             <Icon name="ic:sharp-arrow-forward-ios" class="hover:text-blueaccent" />
-          </UiButton>
+          </NuxtLink>
         </div>
       </div>
       <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
