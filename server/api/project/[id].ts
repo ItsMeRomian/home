@@ -61,7 +61,7 @@ export const projects = [
       {
         icon: "github",
         name: "Github",
-        link: "https://github.com/itsmeromian/fail2ban-cloudflare-nginxproxymanager",
+        link: "https://gist.github.com/ItsMeRomian/78c416015500d2d74c83dde905ff3803",
       },
     ],
     image: "imgs/fail2ban.png",
