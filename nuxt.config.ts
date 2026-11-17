@@ -14,8 +14,16 @@ export default defineNuxtConfig({
         {
           src: "https://umami.dyna.host/script.js",
           "data-website-id": "25da6b79-b509-4de3-b598-cea68d99e826",
+          "data-domains": "tairov.ski",
           defer: true,
-        }
+        },
+        // Session enrichment (IP, device details) + replay/heatmaps; see dyna.host docs/umami.md.
+        { src: "https://dyna.host/umami-enrich.js", defer: true },
+        {
+          src: "https://umami.dyna.host/recorder.js",
+          "data-website-id": "25da6b79-b509-4de3-b598-cea68d99e826",
+          defer: true,
+        },
       ]
     },
   },
