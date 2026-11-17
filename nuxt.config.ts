@@ -11,19 +11,9 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          // Neutral URL: uBlock/EasyPrivacy block umami.*/script.js (see dyna.host docs/umami.md).
-          src: "https://dyna.host/js/dh.js",
-          "data-host-url": "https://umami.dyna.host",
-          "data-website-id": "25da6b79-b509-4de3-b598-cea68d99e826",
-          "data-domains": "tairov.ski",
-          defer: true,
-        },
-        // Session enrichment (IP, device details) + replay/heatmaps; see dyna.host docs/umami.md.
-        { src: "https://dyna.host/umami-enrich.js", defer: true },
-        {
-          src: "https://umami.dyna.host/recorder.js",
-          "data-website-id": "25da6b79-b509-4de3-b598-cea68d99e826",
-          defer: true,
+          // Umami (tracker, enrichment, replay) is added after the load event, so a slow or down dyna.host never delays the page. See dyna.host docs/umami.md.
+          innerHTML:
+            'addEventListener("load",()=>{for(const a of[{src:"https://dyna.host/js/dh.js","data-host-url":"https://umami.dyna.host","data-website-id":"25da6b79-b509-4de3-b598-cea68d99e826","data-domains":"tairov.ski"},{src:"https://dyna.host/umami-enrich.js"},{src:"https://umami.dyna.host/recorder.js","data-website-id":"25da6b79-b509-4de3-b598-cea68d99e826"}]){const s=document.createElement("script");s.async=false;for(const k in a)s.setAttribute(k,a[k]);document.head.append(s)}})',
         },
       ]
     },
